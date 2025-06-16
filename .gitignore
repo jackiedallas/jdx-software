@@ -91,3 +91,6 @@ logs
 # Temporary folders
 tmp/
 temp/
+
+# Local env files
+.env*.local
