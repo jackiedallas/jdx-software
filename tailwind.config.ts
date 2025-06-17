@@ -16,6 +16,15 @@ const config: Config = {
                     charcoal: '#333333',
                 },
             },
+            // Enhanced responsive breakpoints
+            screens: {
+                'xs': '475px',
+                'sm': '640px',
+                'md': '768px',
+                'lg': '1024px',
+                'xl': '1280px',
+                '2xl': '1536px',
+            },
             animation: {
                 'mesh-wave-1': 'mesh-wave-1 8s ease-in-out infinite',
                 'mesh-wave-2': 'mesh-wave-2 12s ease-in-out infinite reverse',

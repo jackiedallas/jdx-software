@@ -7,7 +7,8 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'JDX Software',
-  description: 'Crafted software tools for docs, devs, and decision-makers.',
+  description: 'Building high-impact tools for documentation, automation, and digital clarity.',
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=5',
 }
 
 export default function RootLayout({
@@ -17,10 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+      </head>
       <body className={inter.className}>
-        {/* Header/Nav goes here if global */}
         {children}
-        {/* Footer goes here if global */}
       </body>
     </html>
   )
