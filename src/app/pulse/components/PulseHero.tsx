@@ -81,7 +81,7 @@ export default function PulseHero() {
                     >
                         {/* Main Description */}
                         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 max-w-2xl lg:max-w-3xl mb-6 sm:mb-8 px-2 sm:px-0 leading-relaxed font-medium">
-                            AI-curated newsletter delivering the internet's top trends from Reddit, YouTube, GitHub, and more.
+                            AI-curated newsletter delivering the internet&apos;s top trends from Reddit, YouTube, GitHub, and more.
                         </p>
 
                         {/* Features Grid */}

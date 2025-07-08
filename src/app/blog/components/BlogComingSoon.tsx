@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { IBM_Plex_Sans } from 'next/font/google'
 import { useState } from 'react'
+import Link from 'next/link'
 import ConstellationBackground from '../../components/ConstellationBackground'
 
 const ibmPlexSans = IBM_Plex_Sans({ subsets: ['latin'], weight: ['400', '700'] })
@@ -85,7 +86,7 @@ export default function BlogComingSoon() {
                                 Coming Soon
                             </h2>
                             <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                                We're crafting insightful content about software development, automation, and digital innovation.
+                                We&apos;re crafting insightful content about software development, automation, and digital innovation.
                             </p>
                         </div>
 
@@ -176,7 +177,7 @@ export default function BlogComingSoon() {
                                     <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                     </svg>
-                                    <span>Thanks! You'll be notified when we launch.</span>
+                                    <span>Thanks! You&apos;ll be notified when we launch.</span>
                                 </motion.div>
                             )}
 
@@ -201,7 +202,7 @@ export default function BlogComingSoon() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 3.1 }}
                         >
-                            <a
+                            <Link
                                 href="/"
                                 className="inline-flex items-center text-gray-600 hover:text-blue-600 transition-colors duration-200"
                             >
@@ -209,7 +210,7 @@ export default function BlogComingSoon() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                                 </svg>
                                 Back to Home
-                            </a>
+                            </Link>
                         </motion.div>
                     </motion.div>
                 </div>

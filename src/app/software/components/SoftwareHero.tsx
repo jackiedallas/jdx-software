@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { IBM_Plex_Sans } from 'next/font/google'
+import Image from 'next/image'
 import ConstellationBackground from '../../components/ConstellationBackground'
 
 const ibmPlexSans = IBM_Plex_Sans({ subsets: ['latin'], weight: ['400', '700'] })
@@ -115,9 +116,11 @@ export default function SoftwareHero() {
                                 {/* Manualize Screenshot */}
                                 <div className="flex items-center justify-center">
                                     <div className="w-full max-w-md">
-                                        <img 
+                                        <Image 
                                             src="/manualize-landing.png" 
                                             alt="Manualize App Screenshot" 
+                                            width={400}
+                                            height={300}
                                             className="w-full h-auto rounded-xl shadow-lg border border-gray-200"
                                         />
                                     </div>
@@ -134,7 +137,7 @@ export default function SoftwareHero() {
                         >
                             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">More Tools Coming Soon</h2>
                             <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-8">
-                                We're building a suite of powerful SaaS tools to help businesses automate workflows, improve documentation, and enhance productivity.
+                                We&apos;re building a suite of powerful SaaS tools to help businesses automate workflows, improve documentation, and enhance productivity.
                             </p>
                             
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
