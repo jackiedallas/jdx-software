@@ -1,14 +1,11 @@
-import Hero from './components/Hero'
+import PulseHero from './components/PulseHero'
 
-export default function HomePage() {
+export default function PulsePage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
       <div className="pt-16"> {/* Account for navbar */}
-        <Hero />
+        <PulseHero />
       </div>
     </main>
   )
 }
-
-
-

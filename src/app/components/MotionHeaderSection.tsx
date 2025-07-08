@@ -81,15 +81,43 @@ export default function MotionHeaderSection() {
                         Building high-impact tools for documentation, automation, and digital clarity.
                     </p>
 
-                    {/* Coming Soon Text */}
-                    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 font-medium mb-6 sm:mb-8 lg:mb-10">
-                        Our website is coming soon.
+                    {/* Mission Statement */}
+                    <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed">
+                        We build powerful SaaS tools that help businesses streamline documentation, automate workflows, and achieve digital clarity.
                     </p>
+
+                    {/* Product Links */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto mb-8 sm:mb-10">
+                        <motion.a
+                            href="/software"
+                            className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-500 via-sky-400 to-emerald-500 text-white font-medium text-sm sm:text-base rounded-lg hover:from-blue-600 hover:via-sky-500 hover:to-emerald-600 transform hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 2.5 }}
+                        >
+                            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14-7H5a2 2 0 00-2 2v6a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2zM9 17v-2a2 2 0 012-2h2a2 2 0 012 2v2M9 17h6" />
+                            </svg>
+                            View Our Software
+                        </motion.a>
+                        <motion.a
+                            href="/pulse"
+                            className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-gray-700 font-medium text-sm sm:text-base rounded-lg hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 2.7 }}
+                        >
+                            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                            JDX Pulse Newsletter
+                        </motion.a>
+                    </div>
 
                     {/* Email Signup Container */}
                     <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
                         <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base md:text-lg px-2 sm:px-0">
-                            Be the first to know when we launch
+                            Get updates on new tools and features
                         </p>
                         
                         {!isSubmitted ? (

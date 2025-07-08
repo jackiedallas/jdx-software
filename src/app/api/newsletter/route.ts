@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY
-const SENDGRID_LIST_ID = process.env.SENDGRID_LIST_ID
+const SENDGRID_LIST_ID = process.env.SENDGRID_JDX_NEWS_LIST_ID
 
 export async function POST(request: NextRequest) {
     try {
@@ -81,16 +81,25 @@ async function sendWelcomeEmail(email: string) {
                 },
                 personalizations: [{
                     to: [{ email }],
-                    subject: 'Welcome to JDX Software - You\'re on the list!'
+                    subject: 'Welcome to JDX Software - Stay Updated!'
                 }],
                 content: [{
                     type: 'text/html',
                     value: `
                         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
                             <h2 style="color: #333;">Welcome to JDX Software!</h2>
-                            <p>Thanks for signing up to be notified about our launch.</p>
-                            <p>We're building high-impact tools for documentation, automation, and digital clarity.</p>
-                            <p>You'll be the first to know when we're ready to launch.</p>
+                            <p>Thanks for subscribing to JDX Software updates!</p>
+                            <p>We're building powerful SaaS tools that help businesses streamline documentation, automate workflows, and achieve digital clarity.</p>
+                            
+                            <h3 style="color: #333;">What you'll get:</h3>
+                            <ul style="color: #666;">
+                                <li>🛠️ Updates on new software tools and features</li>
+                                <li>📚 Tips for better documentation and automation</li>
+                                <li>🚀 Early access to new product launches</li>
+                                <li>💡 Insights on productivity and digital clarity</li>
+                            </ul>
+                            
+                            <p>You'll be the first to know about our latest innovations and how they can help your business.</p>
                             <br>
                             <p>Best regards,<br>The JDX Software Team</p>
                             <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;">
