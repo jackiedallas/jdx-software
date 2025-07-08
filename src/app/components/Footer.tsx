@@ -12,14 +12,13 @@ export default function Footer() {
             { name: 'Software', href: '/software' }
         ],
         company: [
-            { name: 'About', href: '/about' },
-            { name: 'Contact', href: '/contact' },
+            // { name: 'About', href: '/about' },
+            // { name: 'Contact', href: '/contact' },
             { name: 'Blog', href: '/blog' }
         ],
         social: [
-            { name: 'GitHub', href: 'https://github.com/jdx', icon: 'github' },
-            { name: 'Twitter', href: 'https://twitter.com/jdxcode', icon: 'twitter' },
-            { name: 'LinkedIn', href: 'https://linkedin.com/in/jdxcode', icon: 'linkedin' }
+            { name: 'GitHub', href: 'https://github.com/jackiedallas', icon: 'github' },
+            { name: 'LinkedIn', href: 'https://www.linkedin.com/in/jackie-dallas', icon: 'linkedin' }
         ]
     }
 
