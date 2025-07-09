@@ -83,7 +83,7 @@ export default function MotionHeaderSection() {
 
                     {/* Mission Statement */}
                     <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed">
-                        We build powerful SaaS tools that help businesses streamline documentation, automate workflows, and achieve digital clarity.
+                        We build powerful SaaS tools that help businesses streamline documentation, automate workflows, and achieve digital clarity. Our flagship product, Manualize, makes professional documentation effortless.
                     </p>
 
                     {/* Product Links */}
