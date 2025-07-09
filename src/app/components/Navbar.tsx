@@ -22,6 +22,8 @@ export default function Navbar() {
 
     return (
         <motion.nav
+            role="navigation"
+            aria-label="Main navigation"
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
