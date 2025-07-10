@@ -9,6 +9,13 @@ import Footer from './components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
+// Performance monitoring
+if (typeof window !== 'undefined') {
+  import('@/lib/seo/technical-seo').then(({ trackPerformanceMetrics }) => {
+    trackPerformanceMetrics();
+  });
+}
+
 export const metadata: Metadata = {
   title: {
     default: 'JDX Software - High-Impact Tools for Documentation & Automation',
@@ -97,7 +104,14 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-2YF6QQQSWR');
+              gtag('config', 'G-2YF6QQQSWR', {
+                page_title: document.title,
+                page_location: window.location.href,
+                custom_map: {
+                  dimension1: 'page_type',
+                  dimension2: 'user_type'
+                }
+              });
             `,
           }}
         />

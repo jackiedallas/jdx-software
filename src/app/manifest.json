@@ -1,0 +1,26 @@
+{
+  "name": "JDX Software - Custom Software Development",
+  "short_name": "JDX Software",
+  "description": "Leading custom software development company specializing in web applications, mobile apps, and enterprise solutions.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3B82F6",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["business", "productivity", "developer"],
+  "lang": "en-US",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "id": "jdx-software-pwa"
+}
