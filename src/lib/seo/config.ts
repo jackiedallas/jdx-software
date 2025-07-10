@@ -192,7 +192,7 @@ export interface PageSEOConfig {
   ogImage?: string;
   ogType?: "website" | "article" | "product" | "profile";
   twitterCard?: "summary" | "summary_large_image" | "app" | "player";
-  structuredData?: Record<string, any>[];
+  structuredData?: Record<string, unknown>[];
   alternateLanguages?: Array<{
     hrefLang: string;
     href: string;
@@ -255,9 +255,10 @@ export const generateCanonicalUrl = (path: string): string => {
   return `${seoConfig.site.url}${cleanPath}`;
 };
 
-export const generateOGImage = (title: string, type: 'default' | 'article' | 'product' = 'default'): string => {
+export const generateOGImage = (title: string, imageType: 'default' | 'article' | 'product' = 'default'): string => {
   // In production, you'd use a service like Vercel OG or similar
   // For now, return the default OG image
+  console.log(`Generating OG image for: ${title}, type: ${imageType}`);
   return `${seoConfig.site.url}${seoConfig.images.ogDefault}`;
 };
 

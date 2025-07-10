@@ -12,7 +12,7 @@ export interface SEOHeadProps extends Partial<PageSEOConfig> {
   templateDescription?: string;
   structuredData?: Array<{
     type: 'organization' | 'website' | 'article' | 'product' | 'service' | 'breadcrumb' | 'faq' | 'review';
-    data?: Record<string, any>;
+    data?: Record<string, unknown>;
   }>;
   breadcrumbs?: Array<{ name: string; url: string }>;
   alternateLanguages?: Array<{ hrefLang: string; href: string }>;
@@ -39,7 +39,6 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   ogDescription,
   ogImage,
   ogType = 'website',
-  twitterCard = 'summary_large_image',
   structuredData = [],
   breadcrumbs = [],
   alternateLanguages = [],

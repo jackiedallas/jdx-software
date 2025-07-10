@@ -5,7 +5,7 @@ import { seoConfig } from './config';
 
 export interface StructuredDataProps {
   type: 'organization' | 'website' | 'article' | 'product' | 'service' | 'breadcrumb' | 'faq' | 'review';
-  data?: Record<string, any>;
+  data?: Record<string, unknown>;
 }
 
 // Organization Schema - Use on homepage and about page
@@ -337,7 +337,7 @@ export const generateReviewSchema = (reviews: Array<{
 });
 
 // Main function to generate structured data based on type
-export const generateStructuredData = (type: StructuredDataProps['type'], data?: Record<string, any>) => {
+export const generateStructuredData = (type: StructuredDataProps['type'], data?: Record<string, unknown>) => {
   switch (type) {
     case 'organization':
       return generateOrganizationSchema();
@@ -346,15 +346,15 @@ export const generateStructuredData = (type: StructuredDataProps['type'], data?:
     case 'service':
       return generateProfessionalServiceSchema();
     case 'article':
-      return generateArticleSchema(data as any);
+      return generateArticleSchema(data as Parameters<typeof generateArticleSchema>[0]);
     case 'breadcrumb':
-      return generateBreadcrumbSchema(data?.breadcrumbs || []);
+      return generateBreadcrumbSchema(data?.breadcrumbs as Parameters<typeof generateBreadcrumbSchema>[0] || []);
     case 'faq':
-      return generateFAQSchema(data?.faqs || []);
+      return generateFAQSchema(data?.faqs as Parameters<typeof generateFAQSchema>[0] || []);
     case 'product':
-      return generateSoftwareApplicationSchema(data as any);
+      return generateSoftwareApplicationSchema(data as Parameters<typeof generateSoftwareApplicationSchema>[0]);
     case 'review':
-      return generateReviewSchema(data?.reviews || []);
+      return generateReviewSchema(data?.reviews as Parameters<typeof generateReviewSchema>[0] || []);
     default:
       return null;
   }

@@ -99,6 +99,7 @@ export default function RootLayout({
         />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YF6QQQSWR"></script>
         <script
+          id="google-analytics"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
