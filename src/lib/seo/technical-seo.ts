@@ -47,8 +47,8 @@ export const measureCoreWebVitals = (): Promise<CoreWebVitals> => {
       // First Input Delay
       const fidObserver = new PerformanceObserver((list) => {
         const entries = list.getEntries();
-        const firstEntry = entries[0];
-        if (firstEntry) {
+        const firstEntry = entries[0] as PerformanceEntry & { processingStart?: number };
+        if (firstEntry && firstEntry.processingStart) {
           vitals.fid = firstEntry.processingStart - firstEntry.startTime;
         }
       });
