@@ -6,15 +6,10 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import AnalyticsProvider from './components/AnalyticsProvider'
+import ConsentBanner from '@/components/analytics/ConsentBanner'
 
 const inter = Inter({ subsets: ['latin'] })
-
-// Performance monitoring
-if (typeof window !== 'undefined') {
-  import('@/lib/seo/technical-seo').then(({ trackPerformanceMetrics }) => {
-    trackPerformanceMetrics();
-  });
-}
 
 export const metadata: Metadata = {
   title: {
@@ -117,15 +112,18 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        <Navbar />
-        <div className="min-h-screen flex flex-col">
-          <main className="flex-grow" role="main">
-            {children}
-          </main>
-          <Footer />
-        </div>
-        <Analytics />
-        <SpeedInsights />
+        <AnalyticsProvider>
+          <Navbar />
+          <div className="min-h-screen flex flex-col">
+            <main className="flex-grow" role="main">
+              {children}
+            </main>
+            <Footer />
+          </div>
+          <ConsentBanner position="bottom" showDetailsLink={true} />
+          <Analytics />
+          <SpeedInsights />
+        </AnalyticsProvider>
       </body>
     </html>
   )
