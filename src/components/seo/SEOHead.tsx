@@ -134,7 +134,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       
       {/* Social Media Meta Tags */}
       {socialTags.map((tag, index) => (
-        tag.property ? (
+        'property' in tag ? (
           <meta key={index} property={tag.property} content={tag.content} />
         ) : (
           <meta key={index} name={tag.name} content={tag.content} />
