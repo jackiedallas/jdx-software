@@ -29,7 +29,7 @@ export default function TermsOfServicePage() {
         <section>
           <h2 className="text-2xl font-semibold mb-4">1. Agreement to Terms</h2>
           <p>
-            These Terms of Service ("Terms") constitute a legally binding agreement between you and JDX Software LLC ("Company," "we," "our," or "us") concerning your access to and use of our website at jdxsoftware.com (the "Service") and our software development services.
+            These Terms of Service (&quot;Terms&quot;) constitute a legally binding agreement between you and JDX Software LLC (&quot;Company,&quot; &quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) concerning your access to and use of our website at jdxsoftware.com (the &quot;Service&quot;) and our software development services.
           </p>
           <p>
             By accessing or using our Service, you agree that you have read, understood, and agree to be bound by all of these Terms. If you do not agree with all of these Terms, you are expressly prohibited from using the Service.
@@ -39,7 +39,7 @@ export default function TermsOfServicePage() {
         <section>
           <h2 className="text-2xl font-semibold mb-4">2. Acceptance of Terms</h2>
           <p>
-            By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement. Additionally, when using this website's particular services, you shall be subject to any posted guidelines or rules applicable to such services.
+            By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement. Additionally, when using this website&apos;s particular services, you shall be subject to any posted guidelines or rules applicable to such services.
           </p>
         </section>
 
@@ -125,7 +125,7 @@ export default function TermsOfServicePage() {
         <section>
           <h2 className="text-2xl font-semibold mb-4">8. Disclaimers</h2>
           <p>
-            THE INFORMATION ON THIS WEBSITE IS PROVIDED ON AN "AS IS" BASIS. TO THE FULLEST EXTENT PERMITTED BY LAW, JDX SOFTWARE LLC EXCLUDES ALL REPRESENTATIONS, WARRANTIES, CONDITIONS AND TERMS (EXPRESS OR IMPLIED, STATUTORY OR OTHERWISE) OTHER THAN THOSE EXPRESSLY SET OUT IN THESE TERMS.
+            THE INFORMATION ON THIS WEBSITE IS PROVIDED ON AN &quot;AS IS&quot; BASIS. TO THE FULLEST EXTENT PERMITTED BY LAW, JDX SOFTWARE LLC EXCLUDES ALL REPRESENTATIONS, WARRANTIES, CONDITIONS AND TERMS (EXPRESS OR IMPLIED, STATUTORY OR OTHERWISE) OTHER THAN THOSE EXPRESSLY SET OUT IN THESE TERMS.
           </p>
           <p>
             We do not warrant that the Service will be uninterrupted, timely, secure, or error-free. We do not warrant the results that may be obtained from the use of the Service or the accuracy or reliability of any information obtained through the Service.
@@ -138,14 +138,14 @@ export default function TermsOfServicePage() {
             TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL JDX SOFTWARE LLC, ITS OFFICERS, DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE FOR ANY INDIRECT, PUNITIVE, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES, INCLUDING WITHOUT LIMITATION DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, DATA, OR OTHER INTANGIBLE LOSSES.
           </p>
           <p>
-            IN NO EVENT SHALL JDX SOFTWARE LLC'S TOTAL LIABILITY TO YOU FOR ALL DAMAGES, LOSSES, AND CAUSES OF ACTION EXCEED THE AMOUNT PAID BY YOU TO JDX SOFTWARE LLC IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM.
+            IN NO EVENT SHALL JDX SOFTWARE LLC&apos;S TOTAL LIABILITY TO YOU FOR ALL DAMAGES, LOSSES, AND CAUSES OF ACTION EXCEED THE AMOUNT PAID BY YOU TO JDX SOFTWARE LLC IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM.
           </p>
         </section>
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">10. Indemnification</h2>
           <p>
-            You agree to defend, indemnify, and hold harmless JDX Software LLC and its officers, directors, employees, and agents from and against any claims, liabilities, damages, judgments, awards, losses, costs, expenses, or fees (including reasonable attorneys' fees) arising out of or relating to your violation of these Terms or your use of the Service.
+            You agree to defend, indemnify, and hold harmless JDX Software LLC and its officers, directors, employees, and agents from and against any claims, liabilities, damages, judgments, awards, losses, costs, expenses, or fees (including reasonable attorneys&apos; fees) arising out of or relating to your violation of these Terms or your use of the Service.
           </p>
         </section>
 
