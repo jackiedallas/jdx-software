@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 }
 
 export default function TermsOfServicePage() {
-  const lastUpdated = "January 10, 2025";
+  const lastUpdated = "July 9, 2025";
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-16">
