@@ -66,7 +66,7 @@ export default function Footer() {
                                     alt="JDX Software"
                                     width={140}
                                     height={46}
-                                    className="h-20 w-auto -mt-6"
+                                    className="h-20 w-auto -mt-6 -ml-5 md:ml-0"
                                 />
                             </div>
                             <p className="text-gray-400 text-sm leading-relaxed">
