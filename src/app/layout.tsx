@@ -89,7 +89,7 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "JDX Software",
               "url": "https://jdxsoftware.com",
-              "logo": "https://jdxsoftware.com/logo.png",
+              "logo": "https://jdxsoftware.com/jdx-logo-full-jpg.jpg",
               "description": "Building high-impact tools for documentation, automation, and digital clarity. Professional software solutions for modern businesses.",
               "sameAs": [
                 "https://github.com/jdx"

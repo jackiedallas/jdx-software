@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function Footer() {
     const currentYear = new Date().getFullYear()
@@ -59,13 +60,14 @@ export default function Footer() {
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
                         >
-                            <div className="flex items-center space-x-2 mb-4">
-                                <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-sky-300 to-emerald-400 bg-clip-text text-transparent">
-                                    JDX
-                                </span>
-                                <span className="text-2xl font-light text-white">
-                                    Software
-                                </span>
+                            <div className="flex items-center mb-4">
+                                <Image
+                                    src="/jdx-logo-full-jpg.jpg"
+                                    alt="JDX Software"
+                                    width={140}
+                                    height={46}
+                                    className="h-12 w-auto"
+                                />
                             </div>
                             <p className="text-gray-400 text-sm leading-relaxed">
                                 Building high-impact tools for documentation, automation, and digital clarity.

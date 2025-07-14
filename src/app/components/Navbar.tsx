@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
+import Image from 'next/image'
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -34,16 +35,17 @@ export default function Navbar() {
                     {/* Logo */}
                     <motion.a
                         href="/"
-                        className="flex items-center space-x-2"
+                        className="flex items-center"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
-                        <span className="text-xl font-bold bg-gradient-to-r from-blue-500 via-sky-400 to-emerald-500 bg-clip-text text-transparent">
-                            JDX
-                        </span>
-                        <span className="text-xl font-light text-neutral-900">
-                            Software
-                        </span>
+                        <Image
+                            src="/jdx-x-logo-svg.svg"
+                            alt="JDX Software"
+                            width={40}
+                            height={40}
+                            className="h-20 w-20 sm:h-40 sm:w-40 mt-5"
+                        />
                     </motion.a>
 
                     {/* Desktop Navigation */}

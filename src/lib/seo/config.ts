@@ -172,8 +172,8 @@ export const seoConfig: SEOConfig = {
   images: {
     ogDefault: "/og-default.jpg",
     ogSquare: "/og-square.jpg",
-    logoLight: "/logo-light.png",
-    logoDark: "/logo-dark.png",
+    logoLight: "/logo-light.svg",
+    logoDark: "/logo-dark.svg",
     favicon: "/favicon.ico",
     appleTouchIcon: "/apple-touch-icon.png"
   }
