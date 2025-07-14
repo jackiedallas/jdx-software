@@ -51,7 +51,7 @@ export default function Footer() {
     return (
         <footer className="bg-neutral-900 text-white" role="contentinfo">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
                     {/* Brand Section */}
                     <div className="md:col-span-1">
                         <motion.div
@@ -60,13 +60,13 @@ export default function Footer() {
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
                         >
-                            <div className="flex items-center mb-4">
+                            <div className="mb-4 flex items-start">
                                 <Image
-                                    src="/jdx-logo-full-jpg.jpg"
+                                    src="/jdx-x-logo-png.png"
                                     alt="JDX Software"
                                     width={140}
                                     height={46}
-                                    className="h-12 w-auto"
+                                    className="h-20 w-auto -mt-6"
                                 />
                             </div>
                             <p className="text-gray-400 text-sm leading-relaxed">
