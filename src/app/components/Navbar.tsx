@@ -40,11 +40,11 @@ export default function Navbar() {
                         whileTap={{ scale: 0.95 }}
                     >
                         <Image
-                            src="/jdx-x-logo-svg.svg"
+                            src="/jdx-x.svg"
                             alt="JDX Software"
                             width={40}
                             height={40}
-                            className="h-20 w-20 sm:h-40 sm:w-40 mt-5"
+                            className="h-20 w-20 sm:h-40 sm:w-40"
                         />
                     </motion.a>
 
