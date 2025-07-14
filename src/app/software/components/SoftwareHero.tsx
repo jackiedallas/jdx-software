@@ -1,6 +1,3 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import { IBM_Plex_Sans } from 'next/font/google'
 import Image from 'next/image'
 import ConstellationBackground from '../../components/ConstellationBackground'
@@ -12,37 +9,24 @@ export default function SoftwareHero() {
         <>
             <ConstellationBackground />
             <div className="pt-16"> {/* Account for navbar */}
-                <motion.section
+                <section
                     className={`bg-transparent text-neutral-900 min-h-screen flex flex-col justify-start items-center text-center px-4 sm:px-6 lg:px-8 py-8 ${ibmPlexSans.className}`}
-                    initial={{ opacity: 0, scale: 0.98 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1.5, ease: 'easeOut' }}
                 >
                     <div className="w-full max-w-6xl mx-auto space-y-12 sm:space-y-16 lg:space-y-20">
                         {/* Header */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1.0, ease: 'easeOut' }}
-                            className="text-center"
-                        >
+                        <div className="text-center">
                             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 leading-tight">
-                                <span className="bg-gradient-to-r from-blue-500 via-sky-400 to-emerald-500 bg-clip-text text-transparent font-bold">
+                                <span className="text-neutral-900 font-light">
                                     Software
                                 </span>
                             </h1>
                             <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                                 High-impact SaaS solutions for modern businesses. From documentation to automation, we build tools that matter.
                             </p>
-                        </motion.div>
+                        </div>
 
                         {/* Featured Product - Manualize */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1.2, ease: 'easeOut', delay: 0.3 }}
-                            className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-200 overflow-hidden"
-                        >
+                        <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
                             <div className="grid md:grid-cols-2 gap-8 lg:gap-12 p-8 lg:p-12">
                                 {/* Content */}
                                 <div className="flex flex-col justify-center space-y-6">
@@ -90,26 +74,22 @@ export default function SoftwareHero() {
                                     </div>
 
                                     <div className="flex flex-col sm:flex-row gap-4">
-                                        <motion.a
+                                        <a
                                             href="https://manualize.app"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-500 via-sky-400 to-emerald-500 text-white font-semibold rounded-lg hover:from-blue-600 hover:via-sky-500 hover:to-emerald-600 transform hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                                            whileHover={{ scale: 1.05 }}
-                                            whileTap={{ scale: 0.95 }}
                                         >
                                             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                             </svg>
                                             Visit Manualize
-                                        </motion.a>
-                                        <motion.button
+                                        </a>
+                                        <button
                                             className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 hover:border-gray-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                                            whileHover={{ scale: 1.05 }}
-                                            whileTap={{ scale: 0.95 }}
                                         >
                                             Learn More
-                                        </motion.button>
+                                        </button>
                                     </div>
                                 </div>
 
@@ -126,15 +106,10 @@ export default function SoftwareHero() {
                                     </div>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
 
                         {/* Coming Soon Section */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1.2, ease: 'easeOut', delay: 0.6 }}
-                            className="text-center pb-16"
-                        >
+                        <div className="text-center pb-16">
                             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">More Tools Coming Soon</h2>
                             <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-8">
                                 We&apos;re building a suite of powerful SaaS tools to help businesses automate workflows, improve documentation, and enhance productivity.
@@ -171,9 +146,9 @@ export default function SoftwareHero() {
                                     <p className="text-gray-600 text-sm">Enhanced productivity for remote teams</p>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
-                </motion.section>
+                </section>
             </div>
         </>
     )

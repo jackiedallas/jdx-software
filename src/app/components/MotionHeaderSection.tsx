@@ -71,12 +71,7 @@ export default function MotionHeaderSection() {
                             className='w-48 h-auto sm:w-64 md:w-80 lg:w-96 xl:w-[32rem] -mt-[60px] sm:-mt-[80px] md:-mt-[110px] lg:-mt-[140px] -mb-[50px] sm:-mb-[70px] md:-mb-[95px] lg:-mb-[120px]'
                         />
                     </div>
-                    {/* <span className="bg-gradient-to-r from-blue-500 via-sky-400 to-emerald-500 bg-clip-text text-transparent font-bold">
-                        JDX
-                    </span>{' '}
-                    <span className="text-neutral-900 font-light">
-                        Software
-                    </span> */}
+                    
                 </motion.h1>
                 
                 {/* Content Container - Delayed Animation */}
