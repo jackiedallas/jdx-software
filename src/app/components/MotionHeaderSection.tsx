@@ -68,7 +68,7 @@ export default function MotionHeaderSection() {
                             alt='JDX Software Logo'
                             width={600}
                             height={180}
-                            className='w-48 h-auto sm:w-64 md:w-80 lg:w-96 xl:w-[32rem] -mt-[60px] sm:-mt-[80px] md:-mt-[110px] lg:-mt-[140px] -mb-[50px] sm:-mb-[70px] md:-mb-[95px] lg:-mb-[120px]'
+                            className='w-64 h-auto sm:w-72 md:w-80 lg:w-96 xl:w-[32rem] -mt-[200px] sm:-mt-[80px] md:-mt-[110px] lg:-mt-[140px] -mb-[50px] sm:-mb-[70px] md:-mb-[95px] lg:-mb-[120px]'
                         />
                     </div>
                     
