@@ -8,13 +8,13 @@
   "theme_color": "#3B82F6",
   "icons": [
     {
-      "src": "/jdx-logo-full-jpg.jpg",
+      "src": "/web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/jdx-logo-full-jpg.jpg",
+      "src": "/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
