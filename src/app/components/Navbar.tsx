@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
+import Link from 'next/link'
 import Image from 'next/image'
 
 export default function Navbar() {
@@ -28,7 +29,7 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
-                    <a
+                    <Link
                         href="/"
                         className="flex items-center"
                     >
@@ -39,12 +40,12 @@ export default function Navbar() {
                             height={40}
                             className="h-20 w-20 sm:h-40 sm:w-40"
                         />
-                    </a>
+                    </Link>
 
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center space-x-8">
                         {navItems.map((item) => (
-                            <a
+                            <Link
                                 key={item.href}
                                 href={item.href}
                                 className={`text-sm font-medium transition-colors duration-200 ${
@@ -54,7 +55,7 @@ export default function Navbar() {
                                 }`}
                             >
                                 {item.label}
-                            </a>
+                            </Link>
                         ))}
                     </div>
 
@@ -80,7 +81,7 @@ export default function Navbar() {
                 {isMenuOpen && (
                     <div className="md:hidden py-4 space-y-4">
                         {navItems.map((item) => (
-                            <a
+                            <Link
                                 key={item.href}
                                 href={item.href}
                                 className={`block text-base font-medium transition-colors duration-200 ${
@@ -90,7 +91,7 @@ export default function Navbar() {
                                 }`}
                             >
                                 {item.label}
-                            </a>
+                            </Link>
                         ))}
                     </div>
                 )}
