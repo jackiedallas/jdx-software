@@ -106,7 +106,7 @@ export const seoConfig: SEOConfig = {
     },
     contactPoint: {
       telephone: "",
-      email: "hello@jdxsoftware.com",
+      email: "info@jdxsoftware.com",
       contactType: "customer service",
       availableLanguage: ["English"]
     }

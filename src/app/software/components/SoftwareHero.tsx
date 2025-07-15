@@ -1,6 +1,7 @@
 import { IBM_Plex_Sans } from 'next/font/google'
 import Image from 'next/image'
 import ConstellationBackground from '../../components/ConstellationBackground'
+import PulseNewsletterForm from './PulseNewsletterForm'
 
 const ibmPlexSans = IBM_Plex_Sans({ subsets: ['latin'], weight: ['400', '700'] })
 
@@ -103,6 +104,94 @@ export default function SoftwareHero() {
                                             height={300}
                                             className="w-full h-auto rounded-xl shadow-lg border border-gray-200"
                                         />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* JDX Pulse Section */}
+                        <div id="pulse" className="relative -top-20"></div>
+                        <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
+                            <div className="grid md:grid-cols-2 gap-8 lg:gap-12 p-8 lg:p-12">
+                                {/* Content */}
+                                <div className="flex flex-col justify-center space-y-6">
+                                    <div className="flex items-center space-x-3">
+                                        <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-lg flex items-center justify-center">
+                                            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                            </svg>
+                                        </div>
+                                        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">JDX Pulse</h3>
+                                        <span className="px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">Live</span>
+                                    </div>
+
+                                    <p className="text-gray-600 text-lg leading-relaxed">
+                                        AI-curated newsletter delivering the internet&apos;s top trends from Reddit, YouTube, GitHub, and more. Stay ahead of the curve with concise summaries powered by GPT-4.
+                                    </p>
+
+                                    <div className="grid grid-cols-2 gap-4 text-sm text-gray-600">
+                                        <div className="flex items-center space-x-2">
+                                            <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                            </svg>
+                                            <span className="text-gray-700">AI-powered curation</span>
+                                        </div>
+                                        <div className="flex items-center space-x-2">
+                                            <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                            </svg>
+                                            <span className="text-gray-700">Daily delivery</span>
+                                        </div>
+                                        <div className="flex items-center space-x-2">
+                                            <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                            </svg>
+                                            <span className="text-gray-700">Multi-platform coverage</span>
+                                        </div>
+                                        <div className="flex items-center space-x-2">
+                                            <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                            </svg>
+                                            <span className="text-gray-700">Concise summaries</span>
+                                        </div>
+                                    </div>
+
+                                    <PulseNewsletterForm />
+                                </div>
+
+                                {/* Preview/Visual */}
+                                <div className="flex items-center justify-center">
+                                    <div className="relative">
+                                        <div className="w-full max-w-sm bg-gray-50 rounded-xl border-2 border-gray-200 p-6 shadow-lg">
+                                            <div className="flex items-center space-x-2 mb-4">
+                                                <div className="w-6 h-6 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-md"></div>
+                                                <span className="font-semibold text-gray-900">JDX Pulse</span>
+                                                <span className="text-xs text-gray-500">Daily Digest</span>
+                                            </div>
+                                            <div className="space-y-3">
+                                                <div className="bg-white rounded-lg p-3 border border-gray-100">
+                                                    <div className="flex items-center space-x-2 mb-2">
+                                                        <div className="w-4 h-4 bg-orange-500 rounded-sm"></div>
+                                                        <span className="text-sm font-medium text-gray-900">Reddit</span>
+                                                    </div>
+                                                    <p className="text-xs text-gray-600">Top trending discussion about AI developments...</p>
+                                                </div>
+                                                <div className="bg-white rounded-lg p-3 border border-gray-100">
+                                                    <div className="flex items-center space-x-2 mb-2">
+                                                        <div className="w-4 h-4 bg-red-500 rounded-sm"></div>
+                                                        <span className="text-sm font-medium text-gray-900">YouTube</span>
+                                                    </div>
+                                                    <p className="text-xs text-gray-600">Latest tech review gaining massive views...</p>
+                                                </div>
+                                                <div className="bg-white rounded-lg p-3 border border-gray-100">
+                                                    <div className="flex items-center space-x-2 mb-2">
+                                                        <div className="w-4 h-4 bg-gray-900 rounded-sm"></div>
+                                                        <span className="text-sm font-medium text-gray-900">GitHub</span>
+                                                    </div>
+                                                    <p className="text-xs text-gray-600">Trending repository with innovative approach...</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
