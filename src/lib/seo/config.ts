@@ -119,17 +119,17 @@ export const seoConfig: SEOConfig = {
     },
     instagram: {
       handle: "@jdxsoftware",
-      url: "https://instagram.com/jdxsoftware"
+      url: "https://www.instagram.com/jdxsoftware/"
     },
     facebook: {
-      url: "https://facebook.com/jdxsoftware"
+      url: "https://www.facebook.com/profile.php?id=61578207667199"
     },
     linkedin: {
-      url: "https://linkedin.com/company/jdx-software"
+      url: "https://www.linkedin.com/company/jdx-software"
     },
     github: {
-      url: "https://github.com/jdx",
-      username: "jdx"
+      url: "https://github.com/jackiedallas",
+      username: "jackiedallas"
     }
   },
   keywords: {
