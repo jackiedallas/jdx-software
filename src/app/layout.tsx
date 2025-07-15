@@ -81,6 +81,10 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <link rel="canonical" href="https://jdxsoftware.com" />
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -89,7 +93,7 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "JDX Software",
               "url": "https://jdxsoftware.com",
-              "logo": "https://jdxsoftware.com/logo.png",
+              "logo": "https://jdxsoftware.com/jdx-logo-full-jpg.jpg",
               "description": "Building high-impact tools for documentation, automation, and digital clarity. Professional software solutions for modern businesses.",
               "sameAs": [
                 "https://github.com/jdx"

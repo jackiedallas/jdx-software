@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { IBM_Plex_Sans } from 'next/font/google'
 import { useState } from 'react'
+import AnimatedLogo from './AnimatedLogo'
 
 const ibmPlexSans = IBM_Plex_Sans({ subsets: ['latin'], weight: ['400', '700'] })
 
@@ -53,47 +54,39 @@ export default function MotionHeaderSection() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.5, ease: 'easeOut' }}
         >
-            <div className="w-full max-w-4xl mx-auto space-y-6 sm:space-y-8 lg:space-y-12">
+            <div className="w-full max-w-4xl mx-auto space-y-2 sm:space-y-3 lg:space-y-4">
                 {/* JDX Software Title - Responsive Typography */}
-                <motion.h1
-                    className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-3 sm:mb-4 md:mb-6 leading-tight"
-                    initial={{ scale: 0.2, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 1.2, ease: 'linear' }}
-                >
-                    <span className="bg-gradient-to-r from-blue-500 via-sky-400 to-emerald-500 bg-clip-text text-transparent font-bold">
-                        JDX
-                    </span>{' '}
-                    <span className="text-neutral-900 font-light">
-                        Software
-                    </span>
-                </motion.h1>
+                <div className="mb-1 sm:mb-2 md:mb-3">
+                    <div className="flex justify-center">
+                        <AnimatedLogo className='w-64 h-auto sm:w-72 md:w-80 lg:w-96 xl:w-[32rem] -mt-[30px] sm:-mt-[80px] md:-mt-[110px] lg:-mt-[140px] -mb-[50px] sm:-mb-[70px] md:-mb-[95px] lg:-mb-[120px]' />
+                    </div>
+                </div>
                 
-                {/* Content Container - Delayed Animation */}
+                {/* Content Container - Appears with Software text */}
                 <motion.div
-                    className="flex flex-col items-center space-y-4 sm:space-y-6 lg:space-y-8"
+                    className="flex flex-col items-center space-y-3 sm:space-y-4 lg:space-y-5"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.0, ease: 'easeOut', delay: 2.0 }}
+                    transition={{ duration: 0.8, ease: 'easeOut', delay: 0.7 }}
                 >
                     {/* Tagline - Responsive Text Size */}
-                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-500 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl mb-4 sm:mb-6 px-2 sm:px-0 leading-relaxed">
+                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-500 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl px-2 sm:px-0 leading-relaxed">
                         Building high-impact tools for documentation, automation, and digital clarity.
                     </p>
 
                     {/* Mission Statement */}
-                    <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed">
+                    <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
                         We build powerful SaaS tools that help businesses streamline documentation, automate workflows, and achieve digital clarity. Our flagship product, Manualize, makes professional documentation effortless.
                     </p>
 
                     {/* Product Links */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto mb-8 sm:mb-10">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto">
                         <motion.a
                             href="/software"
                             className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-500 via-sky-400 to-emerald-500 text-white font-medium text-sm sm:text-base rounded-lg hover:from-blue-600 hover:via-sky-500 hover:to-emerald-600 transform hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 2.5 }}
+                            transition={{ duration: 0.6, delay: 0.9 }}
                         >
                             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14-7H5a2 2 0 00-2 2v6a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2zM9 17v-2a2 2 0 012-2h2a2 2 0 012 2v2M9 17h6" />
@@ -105,7 +98,7 @@ export default function MotionHeaderSection() {
                             className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-gray-700 font-medium text-sm sm:text-base rounded-lg hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 2.7 }}
+                            transition={{ duration: 0.6, delay: 1.0 }}
                         >
                             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
