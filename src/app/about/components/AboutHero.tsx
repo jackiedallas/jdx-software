@@ -1,13 +1,13 @@
 import { IBM_Plex_Sans } from 'next/font/google'
 import Image from 'next/image'
-import ConstellationBackground from '../../components/ConstellationBackground'
+import StaticBackground from '../../components/StaticBackground'
 
 const ibmPlexSans = IBM_Plex_Sans({ subsets: ['latin'], weight: ['400', '700'] })
 
 export default function AboutHero() {
     return (
         <>
-            <ConstellationBackground />
+            <StaticBackground />
             <div className="pt-16"> {/* Account for navbar */}
                 <section
                     className={`bg-transparent text-neutral-900 min-h-screen flex flex-col justify-start items-center text-center px-4 sm:px-6 lg:px-8 py-8 ${ibmPlexSans.className}`}

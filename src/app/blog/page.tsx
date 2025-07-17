@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { IBM_Plex_Sans } from 'next/font/google'
 import { getAllPosts } from '../../lib/mdx'
 import BlogComingSoon from './components/BlogComingSoon'
-import ConstellationBackground from '../components/ConstellationBackground'
+import StaticBackground from '../components/StaticBackground'
 
 const ibmPlexSans = IBM_Plex_Sans({ subsets: ['latin'], weight: ['400', '700'] })
 
@@ -33,7 +33,7 @@ export default function BlogPage() {
 
   return (
     <>
-      <ConstellationBackground />
+      <StaticBackground />
       <div className="pt-16">
         <main className={`bg-transparent text-neutral-900 min-h-screen flex flex-col justify-start items-center text-center px-4 sm:px-6 lg:px-8 py-8 ${ibmPlexSans.className}`}>
           <div className="w-full max-w-6xl mx-auto space-y-12 sm:space-y-16 lg:space-y-20">
