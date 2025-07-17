@@ -1,6 +1,6 @@
 // src/app/layout.tsx
 import './globals.css'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
@@ -16,13 +16,19 @@ if (typeof window !== 'undefined') {
   });
 }
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+}
+
 export const metadata: Metadata = {
   title: {
-    default: 'JDX Software - High-Impact Tools for Documentation & Automation',
+    default: 'JDX Software - High-Impact SaaS Solutions for Modern Businesses',
     template: '%s | JDX Software'
   },
-  description: 'Building high-impact tools for documentation, automation, and digital clarity. Professional software solutions for modern businesses.',
-  keywords: ['software development', 'documentation tools', 'automation', 'digital clarity', 'business tools', 'JDX Software'],
+  description: 'Building innovative SaaS solutions that streamline workflows, enhance productivity, and drive business growth. Professional software tools for modern teams.',
+  keywords: ['SaaS solutions', 'business software', 'productivity tools', 'workflow automation', 'software development', 'digital transformation', 'JDX Software'],
   authors: [{ name: 'JDX Software' }],
   creator: 'JDX Software',
   publisher: 'JDX Software',
@@ -39,22 +45,22 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://jdxsoftware.com',
-    title: 'JDX Software - High-Impact Tools for Documentation & Automation',
-    description: 'Building high-impact tools for documentation, automation, and digital clarity. Professional software solutions for modern businesses.',
+    title: 'JDX Software - High-Impact SaaS Solutions for Modern Businesses',
+    description: 'Building innovative SaaS solutions that streamline workflows, enhance productivity, and drive business growth. Professional software tools for modern teams.',
     siteName: 'JDX Software',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'JDX Software - High-Impact Tools for Documentation & Automation',
+        alt: 'JDX Software - High-Impact SaaS Solutions for Modern Businesses',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'JDX Software - High-Impact Tools for Documentation & Automation',
-    description: 'Building high-impact tools for documentation, automation, and digital clarity. Professional software solutions for modern businesses.',
+    title: 'JDX Software - High-Impact SaaS Solutions for Modern Businesses',
+    description: 'Building innovative SaaS solutions that streamline workflows, enhance productivity, and drive business growth. Professional software tools for modern teams.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -68,7 +74,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  viewport: 'width=device-width, initial-scale=1, maximum-scale=5',
 }
 
 export default function RootLayout({
@@ -79,7 +84,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <link rel="canonical" href="https://jdxsoftware.com" />
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -94,7 +98,7 @@ export default function RootLayout({
               "name": "JDX Software",
               "url": "https://jdxsoftware.com",
               "logo": "https://jdxsoftware.com/jdx-logo-full-jpg.jpg",
-              "description": "Building high-impact tools for documentation, automation, and digital clarity. Professional software solutions for modern businesses.",
+              "description": "Building innovative SaaS solutions that streamline workflows, enhance productivity, and drive business growth. Professional software tools for modern teams.",
               "sameAs": [
                 "https://github.com/jdx"
               ]
