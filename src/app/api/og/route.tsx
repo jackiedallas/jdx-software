@@ -6,8 +6,13 @@ export const runtime = 'edge'
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url)
-    const title = searchParams.get('title') || 'JDX Pulse'
-    const description = searchParams.get('description') || 'Insights on software development, automation, and digital innovation'
+    const title = searchParams.get('title') || 'JDX Software'
+    const description = searchParams.get('description') || 'Innovative SaaS solutions that streamline workflows, enhance productivity, and drive business growth'
+
+    // Fetch the JDX logo
+    const logoUrl = new URL('/jdx-logo-full-jpg.jpg', request.url).href
+    const logoResponse = await fetch(logoUrl)
+    const logoBuffer = await logoResponse.arrayBuffer()
 
     return new ImageResponse(
       (
@@ -34,37 +39,14 @@ export async function GET(request: NextRequest) {
               marginBottom: '40px',
             }}
           >
-            <div
+            <img
+              src={`data:image/jpeg;base64,${Buffer.from(logoBuffer).toString('base64')}`}
+              alt="JDX Software"
               style={{
-                background: 'linear-gradient(135deg, #3b82f6 0%, #0ea5e9 50%, #10b981 100%)',
-                width: '60px',
                 height: '60px',
-                borderRadius: '12px',
-                marginRight: '20px',
+                width: 'auto',
               }}
             />
-            <div
-              style={{
-                fontSize: '48px',
-                background: 'linear-gradient(135deg, #3b82f6 0%, #0ea5e9 50%, #10b981 100%)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                color: 'transparent',
-                fontWeight: 'bold',
-              }}
-            >
-              JDX
-            </div>
-            <div
-              style={{
-                fontSize: '48px',
-                color: '#374151',
-                fontWeight: '300',
-                marginLeft: '10px',
-              }}
-            >
-              Pulse
-            </div>
           </div>
 
           {/* Title */}
