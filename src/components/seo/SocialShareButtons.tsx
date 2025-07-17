@@ -55,31 +55,37 @@ export const SocialShareButtons: React.FC<SocialShareButtonsProps> = ({
       return;
     }
 
-    // Try Web Share API first (best for native apps)
-    if (navigator.share && /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-      try {
-        await navigator.share({
-          title: title,
-          text: description,
-          url: url,
-        });
-        return;
-      } catch {
-        // User cancelled or Web Share API failed, fall back to platform-specific sharing
-      }
-    }
+    // Skip Web Share API to go directly to platform-specific sharing
 
-    // Platform-specific app URLs for direct sharing
+    // Try app deep links first, fallback to web
     const appUrls: Record<string, string> = {
+      twitter: `twitter://post?message=${encodeURIComponent(title + ' ' + url)}`,
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+      linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
+      reddit: `apollo://reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`
+    };
+
+    const webUrls: Record<string, string> = {
       twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`,
       facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
       linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
-      instagram: `https://www.instagram.com/`, // Instagram doesn't support direct URL sharing
       reddit: `https://reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`
     };
 
-    const finalUrl = appUrls[platform] || shareUrl;
-    openWebShare(finalUrl);
+    const appUrl = appUrls[platform];
+    const webUrl = webUrls[platform] || shareUrl;
+
+    if (appUrl) {
+      // Try to open the native app first
+      window.location.href = appUrl;
+      
+      // Fallback to web version after a short delay if app doesn't open
+      setTimeout(() => {
+        openWebShare(webUrl);
+      }, 1500);
+    } else {
+      openWebShare(webUrl);
+    }
   };
 
   const openWebShare = (shareUrl: string) => {
