@@ -94,8 +94,8 @@ This is about turning technical truth into documentation—once and for all.
 
 ---
 
-## TL;DR
+## Key Takeaways
 
-- I built Manualize to solve a real pain: writing SOPs that reflect real work.
-- The magic isn’t that it uses AI—it’s that it produces *usable docs*.
-- If you're tired of boilerplate, I want to talk to you.
+- Manualize addresses the core challenge of creating SOPs that accurately reflect real-world workflows.
+- The value lies not in AI capabilities themselves, but in generating genuinely usable documentation.
+- We're seeking feedback from teams who need practical alternatives to generic documentation templates.
