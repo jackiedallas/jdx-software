@@ -137,6 +137,7 @@ export const generateSocialShareUrls = (config: {
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
     linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
     reddit: `https://reddit.com/submit?url=${encodedUrl}&title=${encodedTitle}`,
+    instagram: `https://www.instagram.com/create/story`, // Instagram doesn't support direct URL sharing, opens story creation
     hackernews: `https://news.ycombinator.com/submitlink?u=${encodedUrl}&t=${encodedTitle}`,
     email: `mailto:?subject=${encodedTitle}&body=${encodedDescription}%0D%0A${encodedUrl}`,
     whatsapp: `https://wa.me/?text=${encodedTitle}%20${encodedUrl}`,

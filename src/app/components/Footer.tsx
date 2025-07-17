@@ -9,12 +9,12 @@ export default function Footer() {
     const footerLinks = {
         product: [
             { name: 'Manualize', href: 'https://manualize.app', external: true },
-            { name: 'JDX Pulse', href: '/software#pulse' },
+            { name: 'JDX Newsletter', href: '/software#pulse' },
         ],
         company: [
             { name: 'About', href: '/about' },
             { name: 'Contact', href: '/contact' },
-            { name: 'Blog', href: '/blog' }
+            { name: 'Pulse', href: '/blog' }
         ],
         social: [
             { name: 'GitHub', href: 'https://github.com/jackiedallas', icon: 'github' },
