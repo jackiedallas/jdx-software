@@ -22,7 +22,7 @@ export default function SoftwareHero() {
                                 </span>
                             </h1>
                             <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                                High-impact SaaS solutions for modern businesses. From documentation to automation, we build tools that matter.
+                                Innovative SaaS solutions that streamline workflows, enhance productivity, and drive business growth. We build software tools that make a difference.
                             </p>
                         </div>
 
@@ -32,13 +32,14 @@ export default function SoftwareHero() {
                                 {/* Content */}
                                 <div className="flex flex-col justify-center space-y-6">
                                     <div className="flex items-center space-x-3">
-                                        <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-xl flex items-center justify-center">
-                                            <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                            </svg>
-                                        </div>
                                         <div className="flex items-center space-x-3">
-                                            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Manualize</h2>
+                                            <Image 
+                                                src="/manualize-logo-final-black.svg" 
+                                                alt="Manualize Logo" 
+                                                width={140}
+                                                height={40}
+                                                className="h-8 w-auto"
+                                            />
                                             <span className="px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">Live</span>
                                         </div>
                                     </div>
@@ -98,7 +99,7 @@ export default function SoftwareHero() {
                                 <div className="flex items-center justify-center">
                                     <div className="w-full max-w-md">
                                         <Image 
-                                            src="/manualize-landing.png" 
+                                            src={`/manualize-landing.png?v=${Date.now()}`} 
                                             alt="Manualize App Screenshot" 
                                             width={400}
                                             height={300}
