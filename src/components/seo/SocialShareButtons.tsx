@@ -55,7 +55,55 @@ export const SocialShareButtons: React.FC<SocialShareButtonsProps> = ({
       return;
     }
 
-    // Open share URL in new window
+    // Try to use native app URLs first, fallback to web
+    const appUrls: Record<string, string> = {
+      twitter: `twitter://post?message=${encodeURIComponent(title + ' ' + url)}`,
+      facebook: `fb://share/?link=${encodeURIComponent(url)}`,
+      linkedin: `linkedin://sharing/share-offsite/?url=${encodeURIComponent(url)}`,
+      instagram: `instagram://share?text=${encodeURIComponent(title + ' ' + url)}`,
+      reddit: `reddit://submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`
+    };
+
+    const appUrl = appUrls[platform];
+    
+    if (appUrl) {
+      // Try to open the native app
+      const link = document.createElement('a');
+      link.href = appUrl;
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      
+      // Set a timeout to fallback to web version if app doesn't open
+      const fallbackTimer = setTimeout(() => {
+        document.body.removeChild(link);
+        openWebShare(shareUrl);
+      }, 1000);
+      
+      // Listen for page visibility change (indicates app opened)
+      const handleVisibilityChange = () => {
+        if (document.hidden) {
+          clearTimeout(fallbackTimer);
+          document.removeEventListener('visibilitychange', handleVisibilityChange);
+          document.body.removeChild(link);
+        }
+      };
+      
+      document.addEventListener('visibilitychange', handleVisibilityChange);
+      
+      try {
+        link.click();
+      } catch {
+        clearTimeout(fallbackTimer);
+        document.removeEventListener('visibilitychange', handleVisibilityChange);
+        document.body.removeChild(link);
+        openWebShare(shareUrl);
+      }
+    } else {
+      openWebShare(shareUrl);
+    }
+  };
+
+  const openWebShare = (shareUrl: string) => {
     const width = 600;
     const height = 400;
     const left = window.innerWidth / 2 - width / 2;
