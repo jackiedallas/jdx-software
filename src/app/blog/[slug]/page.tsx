@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getPostSlugs, getPostHtml } from '../../../lib/mdx'
 import SocialShareButtons from '../../../components/seo/SocialShareButtons'
+import '../blog-content.css'
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>
@@ -20,7 +21,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     const { slug } = await params
     const post = await getPostHtml(slug)
     const postUrl = `https://jdxsoftware.com/blog/${slug}`
-    const ogImage = `https://jdxsoftware.com/og-image.jpg`
+    const ogImage = `https://jdxsoftware.com/api/og?title=${encodeURIComponent(post.meta.title)}&description=${encodeURIComponent(post.meta.description)}`
     
     return {
       title: `${post.meta.title} | JDX Software Blog`,
@@ -103,7 +104,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     url={postUrl}
                     title={post.meta.title}
                     description={post.meta.description}
-                    hashtags={post.meta.tags || ['jdx', 'software', 'development']}
+                    hashtags={Array.isArray(post.meta.tags) ? post.meta.tags : ['jdx', 'software', 'development']}
                     platforms={['linkedin', 'facebook', 'instagram', 'reddit']}
                     size="small"
                     variant="minimal"
@@ -123,7 +124,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </header>
 
             <div 
-              className="prose prose-lg prose-gray max-w-none prose-headings:text-gray-900 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 prose-code:text-gray-900 prose-code:bg-gray-100 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-pre:bg-gray-900 prose-pre:text-gray-100"
+              className="blog-content max-w-none"
               dangerouslySetInnerHTML={{ __html: post.contentHtml }} 
             />
             
@@ -138,7 +139,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   url={postUrl}
                   title={post.meta.title}
                   description={post.meta.description}
-                  hashtags={post.meta.tags || ['jdx', 'software', 'development']}
+                  hashtags={Array.isArray(post.meta.tags) ? post.meta.tags : ['jdx', 'software', 'development']}
                   platforms={['linkedin', 'facebook', 'instagram', 'reddit', 'copy']}
                   size="medium"
                   showLabels={true}
