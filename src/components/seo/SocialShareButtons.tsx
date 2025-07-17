@@ -55,52 +55,31 @@ export const SocialShareButtons: React.FC<SocialShareButtonsProps> = ({
       return;
     }
 
-    // Try to use native app URLs first, fallback to web
+    // Try Web Share API first (best for native apps)
+    if (navigator.share && /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      try {
+        await navigator.share({
+          title: title,
+          text: description,
+          url: url,
+        });
+        return;
+      } catch (err) {
+        // User cancelled or Web Share API failed, fall back to platform-specific sharing
+      }
+    }
+
+    // Platform-specific app URLs for direct sharing
     const appUrls: Record<string, string> = {
-      twitter: `twitter://post?message=${encodeURIComponent(title + ' ' + url)}`,
-      facebook: `fb://share/?link=${encodeURIComponent(url)}`,
-      linkedin: `linkedin://sharing/share-offsite/?url=${encodeURIComponent(url)}`,
-      instagram: `instagram://share?text=${encodeURIComponent(title + ' ' + url)}`,
-      reddit: `reddit://submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`
+      twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`,
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+      linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
+      instagram: `https://www.instagram.com/`, // Instagram doesn't support direct URL sharing
+      reddit: `https://reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`
     };
 
-    const appUrl = appUrls[platform];
-    
-    if (appUrl) {
-      // Try to open the native app
-      const link = document.createElement('a');
-      link.href = appUrl;
-      link.style.display = 'none';
-      document.body.appendChild(link);
-      
-      // Set a timeout to fallback to web version if app doesn't open
-      const fallbackTimer = setTimeout(() => {
-        document.body.removeChild(link);
-        openWebShare(shareUrl);
-      }, 1000);
-      
-      // Listen for page visibility change (indicates app opened)
-      const handleVisibilityChange = () => {
-        if (document.hidden) {
-          clearTimeout(fallbackTimer);
-          document.removeEventListener('visibilitychange', handleVisibilityChange);
-          document.body.removeChild(link);
-        }
-      };
-      
-      document.addEventListener('visibilitychange', handleVisibilityChange);
-      
-      try {
-        link.click();
-      } catch {
-        clearTimeout(fallbackTimer);
-        document.removeEventListener('visibilitychange', handleVisibilityChange);
-        document.body.removeChild(link);
-        openWebShare(shareUrl);
-      }
-    } else {
-      openWebShare(shareUrl);
-    }
+    const finalUrl = appUrls[platform] || shareUrl;
+    openWebShare(finalUrl);
   };
 
   const openWebShare = (shareUrl: string) => {
