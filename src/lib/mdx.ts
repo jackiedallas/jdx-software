@@ -6,11 +6,23 @@ import html from 'remark-html';
 
 const postsDirectory = path.join(process.cwd(), 'src/content/blog');
 
+// Function to add target="_blank" to external links in HTML
+function processExternalLinks(html: string): string {
+  // Add target="_blank" and rel="noopener noreferrer" to external links
+  return html.replace(
+    /<a href="(https?:\/\/[^"]*|[^"]*manualize\.app[^"]*)"([^>]*)>/g,
+    '<a href="$1" target="_blank" rel="noopener noreferrer"$2>'
+  );
+}
+
 export interface PostMeta {
   title: string;
   date: string;
   description: string;
-  [key: string]: any;
+  tags?: string[];
+  keywords?: string[];
+  updatedDate?: string;
+  [key: string]: unknown;
 }
 
 export interface Post {
@@ -51,10 +63,11 @@ export function getPostBySlug(slug: string): Post {
 export async function getPostHtml(slug: string): Promise<PostWithHtml> {
   const { content, ...rest } = getPostBySlug(slug);
   const processedContent = await remark().use(html).process(content);
+  const htmlWithExternalLinks = processExternalLinks(processedContent.toString());
   
   return {
     ...rest,
-    contentHtml: processedContent.toString(),
+    contentHtml: htmlWithExternalLinks,
   };
 }
 
