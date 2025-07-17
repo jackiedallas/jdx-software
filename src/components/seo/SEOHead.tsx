@@ -106,6 +106,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="author" content={author || seoConfig.business.name} />
       <meta name="robots" content={robotsContent} />
       <meta name="googlebot" content={robotsContent} />
+      <meta name="facebook-domain-verification" content="7tzh0mrsjl23s3dcr0ll3eypizo5c1" />
       
       {/* Canonical URL */}
       <link rel="canonical" href={canonicalUrl} />
