@@ -105,7 +105,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     title={post.meta.title}
                     description={post.meta.description}
                     hashtags={Array.isArray(post.meta.tags) ? post.meta.tags : ['jdx', 'software', 'development']}
-                    platforms={['linkedin', 'facebook', 'instagram', 'reddit']}
+                    platforms={['linkedin', 'facebook', 'reddit']}
                     size="small"
                     variant="minimal"
                   />
@@ -140,7 +140,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   title={post.meta.title}
                   description={post.meta.description}
                   hashtags={Array.isArray(post.meta.tags) ? post.meta.tags : ['jdx', 'software', 'development']}
-                  platforms={['linkedin', 'facebook', 'instagram', 'reddit', 'copy']}
+                  platforms={['linkedin', 'facebook', 'reddit', 'copy']}
                   size="medium"
                   showLabels={false}
                   variant="default"
