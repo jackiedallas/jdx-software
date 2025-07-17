@@ -89,6 +89,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
+        <meta name="facebook-domain-verification" content="7tzh0mrsjl23s3dcr0ll3eypizo5c1" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
