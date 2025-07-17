@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     siteName: 'JDX Software',
     images: [
       {
-        url: '/api/og',
+        url: '/api/og?v=2',
         width: 1200,
         height: 630,
         alt: 'JDX Software - High-Impact SaaS Solutions for Modern Businesses',

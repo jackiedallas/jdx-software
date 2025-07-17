@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     const { slug } = await params
     const post = await getPostHtml(slug)
     const postUrl = `https://jdxsoftware.com/blog/${slug}`
-    const ogImage = `https://jdxsoftware.com/api/og?title=${encodeURIComponent(post.meta.title)}&description=${encodeURIComponent(post.meta.description)}`
+    const ogImage = `https://jdxsoftware.com/api/og?title=${encodeURIComponent(post.meta.title)}&description=${encodeURIComponent(post.meta.description)}&v=2`
     
     return {
       title: `${post.meta.title} | JDX Software Blog`,
