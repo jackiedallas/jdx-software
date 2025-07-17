@@ -79,10 +79,10 @@ export const SocialShareButtons: React.FC<SocialShareButtonsProps> = ({
 
   const getButtonSize = () => {
     switch (size) {
-      case 'small': return 'p-2';
-      case 'medium': return 'p-3';
-      case 'large': return 'p-4';
-      default: return 'p-3';
+      case 'small': return 'p-1.5 sm:p-2';
+      case 'medium': return 'p-2 sm:p-3';
+      case 'large': return 'p-3 sm:p-4';
+      default: return 'p-2 sm:p-3';
     }
   };
 
@@ -184,7 +184,7 @@ export const SocialShareButtons: React.FC<SocialShareButtonsProps> = ({
   };
 
   return (
-    <div className={`flex items-center gap-2 ${className}`}>
+    <div className={`flex items-center gap-2 sm:gap-3 ${className}`}>
       {platforms.map((platform) => {
         const config = platformConfigs[platform];
         const shareUrl = shareUrls[platform as keyof typeof shareUrls];
@@ -198,13 +198,14 @@ export const SocialShareButtons: React.FC<SocialShareButtonsProps> = ({
               ${getVariantClasses()}
               ${config.color}
               ${config.bgColor}
+              flex-shrink-0
             `}
             title={`Share on ${config.name}`}
             aria-label={`Share on ${config.name}`}
           >
             {config.icon}
             {showLabels && (
-              <span className="ml-2 text-sm font-medium">
+              <span className="ml-1 sm:ml-2 text-xs sm:text-sm font-medium">
                 {config.name}
               </span>
             )}
