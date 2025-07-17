@@ -87,9 +87,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </Link>
           </div>
 
-          <article className="bg-white/80 backdrop-blur-sm rounded-xl p-8 sm:p-12 border border-gray-200">
-            <header className="mb-8">
-              <div className="flex items-center justify-between mb-4">
+          <article className="bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-8 lg:p-12 border border-gray-200">
+            <header className="mb-6 sm:mb-8">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-3 sm:gap-4">
                 <time className="text-sm text-gray-500" dateTime={post.meta.date}>
                   {new Date(post.meta.date).toLocaleDateString('en-US', {
                     year: 'numeric',
@@ -99,7 +99,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 </time>
                 
                 <div className="flex items-center gap-2">
-                  <span className="text-sm text-gray-500 mr-2">Share:</span>
+                  <span className="text-xs sm:text-sm text-gray-500 mr-1 sm:mr-2">Share:</span>
                   <SocialShareButtons
                     url={postUrl}
                     title={post.meta.title}
@@ -112,12 +112,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 </div>
               </div>
               
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-3 sm:mb-4">
                 {post.meta.title}
               </h1>
               
               {post.meta.description && (
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed">
                   {post.meta.description}
                 </p>
               )}
@@ -128,11 +128,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               dangerouslySetInnerHTML={{ __html: post.contentHtml }} 
             />
             
-            <footer className="mt-12 pt-8 border-t border-gray-200">
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div className="text-center sm:text-left">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Share this post</h3>
-                  <p className="text-gray-600 text-sm">Found this helpful? Share it with your network!</p>
+            <footer className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-200">
+              <div className="flex flex-col items-center justify-center gap-4 sm:gap-6">
+                <div className="text-center">
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">Share this post</h3>
+                  <p className="text-gray-600 text-xs sm:text-sm">Found this helpful? Share it with your network!</p>
                 </div>
                 
                 <SocialShareButtons
@@ -142,8 +142,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   hashtags={Array.isArray(post.meta.tags) ? post.meta.tags : ['jdx', 'software', 'development']}
                   platforms={['linkedin', 'facebook', 'instagram', 'reddit', 'copy']}
                   size="medium"
-                  showLabels={true}
+                  showLabels={false}
                   variant="default"
+                  className="flex-wrap justify-center"
                 />
               </div>
             </footer>
