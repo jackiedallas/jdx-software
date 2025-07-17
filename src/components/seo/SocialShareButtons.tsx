@@ -92,7 +92,7 @@ export const SocialShareButtons: React.FC<SocialShareButtonsProps> = ({
       
       try {
         link.click();
-      } catch (err) {
+      } catch {
         clearTimeout(fallbackTimer);
         document.removeEventListener('visibilitychange', handleVisibilityChange);
         document.body.removeChild(link);
