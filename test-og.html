@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OG Image Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-case { margin: 20px 0; padding: 10px; border: 1px solid #ccc; }
+        img { max-width: 100%; height: auto; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <h1>OG Image Test</h1>
+    
+    <div class="test-case">
+        <h2>Test 1: Default Image</h2>
+        <p>URL: <code>http://localhost:3001/api/og</code></p>
+        <img src="http://localhost:3001/api/og" alt="Default OG Image" />
+    </div>
+    
+    <div class="test-case">
+        <h2>Test 2: Welcome Blog Post</h2>
+        <p>URL: <code>http://localhost:3001/api/og?title=Welcome%20to%20Pulse&description=Introducing%20Pulse%20%E2%80%94%20the%20official%20blog%20of%20JDX%20Software</code></p>
+        <img src="http://localhost:3001/api/og?title=Welcome%20to%20Pulse&description=Introducing%20Pulse%20%E2%80%94%20the%20official%20blog%20of%20JDX%20Software" alt="Welcome Blog OG Image" />
+    </div>
+    
+    <div class="test-case">
+        <h2>Test 3: AI Blog Post</h2>
+        <p>URL: <code>http://localhost:3001/api/og?title=Why%20I%27m%20Not%20Selling%20You%20AI&description=How%20Manualize%20uses%20AI%20thoughtfully%20to%20solve%20real%20documentation%20problems</code></p>
+        <img src="http://localhost:3001/api/og?title=Why%20I%27m%20Not%20Selling%20You%20AI&description=How%20Manualize%20uses%20AI%20thoughtfully%20to%20solve%20real%20documentation%20problems" alt="AI Blog OG Image" />
+    </div>
+    
+    <script>
+        // Add error handling to images
+        document.querySelectorAll('img').forEach(img => {
+            img.onerror = function() {
+                this.style.border = '2px solid red';
+                this.alt = 'Failed to load: ' + this.src;
+            };
+        });
+    </script>
+</body>
+</html>
