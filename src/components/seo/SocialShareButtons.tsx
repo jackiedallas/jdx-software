@@ -64,7 +64,7 @@ export const SocialShareButtons: React.FC<SocialShareButtonsProps> = ({
           url: url,
         });
         return;
-      } catch (err) {
+      } catch {
         // User cancelled or Web Share API failed, fall back to platform-specific sharing
       }
     }
