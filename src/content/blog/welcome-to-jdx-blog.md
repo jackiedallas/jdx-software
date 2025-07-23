@@ -4,6 +4,13 @@ date: "2025-07-17"
 description: "Introducing Pulse — the official blog of JDX Software. We'll share product insights, lessons learned, and behind-the-scenes updates as we build better tools for real-world creators and developers."
 tags: ["pulse", "jdx", "software", "development", "automation", "tools", "announcement"]
 keywords: ["JDX Software", "blog launch", "product development", "automation", "developer tools", "founder blog"]
+author:
+  name: "Jackie Johnson-Dallas"
+  bio: "Founder of JDX Software, creator of Manualize - turning terminal workflows into professional documentation"
+  avatar: "/professionalheadshot.jpg"
+  social:
+    twitter: "@fdevdallas"
+    github: "@jackiedallas"
 ---
 
 **Pulse** is the official blog of JDX Software. It’s where we share the heartbeat of our ideas—how they evolve, how we build them, and how they help developers and creators solve real problems.

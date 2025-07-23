@@ -22,6 +22,16 @@ export interface PostMeta {
   tags?: string[];
   keywords?: string[];
   updatedDate?: string;
+  author?: {
+    name: string;
+    bio?: string;
+    avatar?: string;
+    social?: {
+      twitter?: string;
+      linkedin?: string;
+      github?: string;
+    };
+  };
   [key: string]: unknown;
 }
 

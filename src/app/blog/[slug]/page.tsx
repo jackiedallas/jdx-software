@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getPostSlugs, getPostHtml } from '../../../lib/mdx'
 import SocialShareButtons from '../../../components/seo/SocialShareButtons'
+import AuthorCard from '../../../components/blog/AuthorCard'
 import '../blog-content.css'
 
 interface BlogPostPageProps {
@@ -91,7 +92,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <header className="mb-6 sm:mb-8">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-3 sm:gap-4">
                 <time className="text-sm text-gray-500" dateTime={post.meta.date}>
-                  {new Date(post.meta.date).toLocaleDateString('en-US', {
+                  {new Date(post.meta.date + 'T12:00:00').toLocaleDateString('en-US', {
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric'
@@ -127,6 +128,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               className="blog-content max-w-none"
               dangerouslySetInnerHTML={{ __html: post.contentHtml }} 
             />
+            
+            {post.meta.author && (
+              <div className="mt-8 sm:mt-10">
+                <AuthorCard author={post.meta.author} />
+              </div>
+            )}
             
             <footer className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-200">
               <div className="flex flex-col items-center justify-center gap-4 sm:gap-6">
