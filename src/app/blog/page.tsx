@@ -55,14 +55,17 @@ export default function BlogPage() {
                 <article key={slug} className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-200 overflow-hidden hover:shadow-2xl transition-shadow duration-200">
                   <div className="p-4 sm:p-6 lg:p-8 xl:p-12">
                     <div className="flex flex-col space-y-3 sm:space-y-4 text-left">
-                      <div className="flex items-center text-xs sm:text-sm text-gray-500">
+                      <div className="flex items-center justify-between text-xs sm:text-sm text-gray-500">
                         <time dateTime={meta.date}>
-                          {new Date(meta.date).toLocaleDateString('en-US', {
+                          {new Date(meta.date + 'T12:00:00').toLocaleDateString('en-US', {
                             year: 'numeric',
                             month: 'long',
                             day: 'numeric'
                           })}
                         </time>
+                        {meta.author && (
+                          <span className="text-gray-600">by {meta.author.name}</span>
+                        )}
                       </div>
                       
                       <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight">
