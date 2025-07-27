@@ -1,4 +1,5 @@
 import { IBM_Plex_Sans } from 'next/font/google'
+import Link from 'next/link'
 import StaticBackground from '../../components/StaticBackground'
 import NewsletterSignupForm from './NewsletterSignupForm'
 
@@ -21,7 +22,7 @@ export default function NewsletterHero() {
                                 </span>
                             </h1>
                             <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                                Stay updated with JDX Software's latest developments, new blog posts, product updates, and insights from our founder's journey in building modern software tools.
+                                Stay updated with JDX Software&apos;s latest developments, new blog posts, product updates, and insights from our founder&apos;s journey in building modern software tools.
                             </p>
                         </div>
 
@@ -106,12 +107,12 @@ export default function NewsletterHero() {
                                         Recent from the Blog
                                     </h2>
                                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                                        Get a taste of what you'll receive in your inbox
+                                        Get a taste of what you&apos;ll receive in your inbox
                                     </p>
                                 </div>
                                 
                                 <div className="text-center">
-                                    <a
+                                    <Link
                                         href="/blog"
                                         className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-500 via-sky-400 to-emerald-500 text-white font-semibold rounded-lg hover:from-blue-600 hover:via-sky-500 hover:to-emerald-600 transform hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                                     >
@@ -119,7 +120,7 @@ export default function NewsletterHero() {
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                                         </svg>
                                         Read Our Blog
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

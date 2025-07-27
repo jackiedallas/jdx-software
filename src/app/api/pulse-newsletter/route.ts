@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
         })
 
         // Add subscriber to Mailchimp audience with pulse-specific tags
-        const response = await mailchimp.lists.addListMember(MAILCHIMP_AUDIENCE_ID, {
+        await mailchimp.lists.addListMember(MAILCHIMP_AUDIENCE_ID, {
             email_address: email,
             status: 'subscribed',
             tags: ['pulse-newsletter', 'ai-curated']
@@ -41,11 +41,11 @@ export async function POST(request: NextRequest) {
             message: 'Successfully subscribed to JDX Pulse!'
         })
 
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.error('Pulse newsletter signup error:', error)
         
         // Handle specific Mailchimp errors
-        if (error.status === 400 && error.response?.body?.title === 'Member Exists') {
+        if (error && typeof error === 'object' && 'status' in error && error.status === 400 && 'response' in error && error.response && typeof error.response === 'object' && 'body' in error.response && error.response.body && typeof error.response.body === 'object' && 'title' in error.response.body && error.response.body.title === 'Member Exists') {
             return NextResponse.json(
                 { error: 'This email is already subscribed!' },
                 { status: 400 }

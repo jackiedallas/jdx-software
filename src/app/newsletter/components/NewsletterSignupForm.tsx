@@ -84,7 +84,7 @@ export default function NewsletterSignupForm() {
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Welcome to JDX Newsletter!</h3>
                     <p className="text-gray-600">
-                        Thanks for subscribing. You'll receive our latest updates and insights directly in your inbox.
+                        Thanks for subscribing. You&apos;ll receive our latest updates and insights directly in your inbox.
                     </p>
                 </div>
             )}

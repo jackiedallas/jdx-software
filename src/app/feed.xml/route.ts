@@ -34,7 +34,7 @@ function getAllPosts() {
   return posts
 }
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   const posts = getAllPosts()
   const siteUrl = 'https://jdxsoftware.com'
   
