@@ -18,7 +18,8 @@ export default function Navbar() {
         { href: '/software', label: 'Software' },
         { href: '/about', label: 'About' },
         { href: '/contact', label: 'Contact' },
-        { href: '/blog', label: 'Pulse' }
+        { href: '/newsletter', label: 'Newsletter' },
+        { href: '/blog', label: 'Blog' }
     ]
 
     return (

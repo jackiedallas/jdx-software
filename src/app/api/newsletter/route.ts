@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
+import mailchimp from '@mailchimp/mailchimp_marketing'
 
-const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY
-const SENDGRID_LIST_ID = process.env.SENDGRID_JDX_NEWS_LIST_ID
+const MAILCHIMP_API_KEY = process.env.MAILCHIMP_API_KEY
+const MAILCHIMP_AUDIENCE_ID = process.env.MAILCHIMP_AUDIENCE_ID
+const MAILCHIMP_SERVER = process.env.MAILCHIMP_SERVER
 
 export async function POST(request: NextRequest) {
     try {
@@ -14,105 +16,46 @@ export async function POST(request: NextRequest) {
             )
         }
 
-        if (!SENDGRID_API_KEY || !SENDGRID_LIST_ID) {
+        if (!MAILCHIMP_API_KEY || !MAILCHIMP_AUDIENCE_ID || !MAILCHIMP_SERVER) {
             return NextResponse.json(
-                { error: 'SendGrid configuration missing' },
+                { error: 'Mailchimp configuration missing' },
                 { status: 500 }
             )
         }
 
-        // Add contact to SendGrid list (without custom fields)
-        const response = await fetch('https://api.sendgrid.com/v3/marketing/contacts', {
-            method: 'PUT',
-            headers: {
-                'Authorization': `Bearer ${SENDGRID_API_KEY}`,
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                list_ids: [SENDGRID_LIST_ID],
-                contacts: [
-                    {
-                        email: email
-                    }
-                ]
-            })
+        // Configure Mailchimp
+        mailchimp.setConfig({
+            apiKey: MAILCHIMP_API_KEY,
+            server: MAILCHIMP_SERVER,
         })
 
-        if (!response.ok) {
-            const errorData = await response.text()
-            console.error('SendGrid API error:', errorData)
+        // Add subscriber to Mailchimp audience
+        const response = await mailchimp.lists.addListMember(MAILCHIMP_AUDIENCE_ID, {
+            email_address: email,
+            status: 'subscribed',
+            tags: ['newsletter', 'blog-updates']
+        })
+
+        return NextResponse.json({ 
+            success: true,
+            message: 'Successfully subscribed to newsletter!'
+        })
+
+    } catch (error: any) {
+        console.error('Newsletter signup error:', error)
+        
+        // Handle specific Mailchimp errors
+        if (error.status === 400 && error.response?.body?.title === 'Member Exists') {
             return NextResponse.json(
-                { error: 'Failed to subscribe to newsletter' },
-                { status: 500 }
+                { error: 'This email is already subscribed!' },
+                { status: 400 }
             )
         }
-
-        // Send welcome email (optional)
-        await sendWelcomeEmail(email)
-
-        return NextResponse.json({ success: true })
-
-    } catch (error) {
-        console.error('Newsletter signup error:', error)
+        
         return NextResponse.json(
-            { error: 'Internal server error' },
+            { error: 'Failed to subscribe to newsletter' },
             { status: 500 }
         )
     }
 }
 
-// Optional: Send a welcome email
-async function sendWelcomeEmail(email: string) {
-    try {
-        await fetch('https://api.sendgrid.com/v3/mail/send', {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${SENDGRID_API_KEY}`,
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                from: {
-                    email: 'noreply@jdxsoftware.com',
-                    name: 'JDX Software'
-                },
-                reply_to: {
-                    email: 'contact@jdxsoftware.com',
-                    name: 'JDX Software'
-                },
-                personalizations: [{
-                    to: [{ email }],
-                    subject: 'Welcome to JDX Software - Stay Updated!'
-                }],
-                content: [{
-                    type: 'text/html',
-                    value: `
-                        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-                            <h2 style="color: #333;">Welcome to JDX Software!</h2>
-                            <p>Thanks for subscribing to JDX Software updates!</p>
-                            <p>We're building powerful SaaS tools that help businesses streamline documentation, automate workflows, and achieve digital clarity.</p>
-                            
-                            <h3 style="color: #333;">What you'll get:</h3>
-                            <ul style="color: #666;">
-                                <li>🛠️ Updates on new software tools and features</li>
-                                <li>📚 Tips for better documentation and automation</li>
-                                <li>🚀 Early access to new product launches</li>
-                                <li>💡 Insights on productivity and digital clarity</li>
-                            </ul>
-                            
-                            <p>You'll be the first to know about our latest innovations and how they can help your business.</p>
-                            <br>
-                            <p>Best regards,<br>The JDX Software Team</p>
-                            <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;">
-                            <p style="font-size: 12px; color: #666;">
-                                If you didn't sign up for this, you can safely ignore this email.
-                            </p>
-                        </div>
-                    `
-                }]
-            })
-        })
-    } catch (error) {
-        console.error('Welcome email error:', error)
-        // Don't fail the signup if welcome email fails
-    }
-}

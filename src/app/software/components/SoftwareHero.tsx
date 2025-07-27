@@ -1,7 +1,6 @@
 import { IBM_Plex_Sans } from 'next/font/google'
 import Image from 'next/image'
 import StaticBackground from '../../components/StaticBackground'
-import PulseNewsletterForm from './PulseNewsletterForm'
 
 const ibmPlexSans = IBM_Plex_Sans({ subsets: ['latin'], weight: ['400', '700'] })
 
@@ -110,59 +109,6 @@ export default function SoftwareHero() {
                             </div>
                         </div>
 
-                        {/* JDX Pulse Section */}
-                        <div id="pulse" className="relative -top-20"></div>
-                        <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
-                            <div className="flex justify-center p-8 lg:p-12">
-                                {/* Content */}
-                                <div className="flex flex-col justify-center space-y-6 max-w-2xl text-center">
-                                    <div className="flex items-center justify-center space-x-3">
-                                        <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-lg flex items-center justify-center">
-                                            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                            </svg>
-                                        </div>
-                                        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">JDX Newsletter</h3>
-                                        <span className="px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">Live</span>
-                                    </div>
-
-                                    <p className="text-gray-600 text-lg leading-relaxed">
-                                        AI-curated newsletter delivering the internet&apos;s top trends from Reddit, YouTube, GitHub, and more. Stay ahead of the curve with concise summaries powered by GPT-4.
-                                    </p>
-
-                                    <div className="flex flex-wrap justify-center gap-x-6 gap-y-4 text-sm text-gray-600">
-                                        <div className="flex items-center space-x-2">
-                                            <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                            </svg>
-                                            <span className="text-gray-700">AI-powered curation</span>
-                                        </div>
-                                        <div className="flex items-center space-x-2">
-                                            <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                            </svg>
-                                            <span className="text-gray-700">Daily delivery</span>
-                                        </div>
-                                        <div className="flex items-center space-x-2">
-                                            <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                            </svg>
-                                            <span className="text-gray-700">Multi-platform coverage</span>
-                                        </div>
-                                        <div className="flex items-center space-x-2">
-                                            <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                            </svg>
-                                            <span className="text-gray-700">Concise summaries</span>
-                                        </div>
-                                    </div>
-                                    <div className='flex justify-center'>
-                                        <PulseNewsletterForm />
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
 
                         {/* Coming Soon Section */}
                         <div className="text-center pb-16">

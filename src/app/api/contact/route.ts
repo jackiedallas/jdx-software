@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
-import sgMail from '@sendgrid/mail'
+import { Resend } from 'resend'
+
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: NextRequest) {
   try {
@@ -23,28 +25,74 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Set SendGrid API key
-    sgMail.setApiKey(process.env.SENDGRID_API_KEY!)
-
-    // Send email notification
-    const msg = {
-      to: 'info@jdxsoftware.com',
-      from: 'noreply@jdxsoftware.com',
-      subject: `Contact Form: ${subject || 'New Inquiry'}`,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Company:</strong> ${company || 'Not provided'}</p>
-        <p><strong>Subject:</strong> ${subject || 'General Inquiry'}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
-        <hr>
-        <p><small>Submitted at: ${new Date().toISOString()}</small></p>
-      `
+    if (!process.env.RESEND_API_KEY) {
+      return NextResponse.json(
+        { error: 'Email service configuration missing' },
+        { status: 500 }
+      )
     }
 
-    await sgMail.send(msg)
+    // Send email notification via Resend
+    const emailResponse = await resend.emails.send({
+      from: 'JDX Software <noreply@jdxsoftware.com>',
+      to: ['info@jdxsoftware.com'],
+      replyTo: email,
+      subject: `Contact Form: ${subject || 'New Inquiry'}`,
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+          <h2 style="color: #333; border-bottom: 2px solid #0070f3; padding-bottom: 10px;">
+            New Contact Form Submission
+          </h2>
+          
+          <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <table style="width: 100%; border-collapse: collapse;">
+              <tr>
+                <td style="padding: 8px 0; font-weight: bold; color: #333; width: 120px;">Name:</td>
+                <td style="padding: 8px 0; color: #666;">${name}</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 0; font-weight: bold; color: #333;">Email:</td>
+                <td style="padding: 8px 0; color: #666;">
+                  <a href="mailto:${email}" style="color: #0070f3; text-decoration: none;">${email}</a>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 0; font-weight: bold; color: #333;">Company:</td>
+                <td style="padding: 8px 0; color: #666;">${company || 'Not provided'}</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 0; font-weight: bold; color: #333;">Subject:</td>
+                <td style="padding: 8px 0; color: #666;">${subject || 'General Inquiry'}</td>
+              </tr>
+            </table>
+          </div>
+
+          <div style="margin: 20px 0;">
+            <h3 style="color: #333; margin-bottom: 10px;">Message:</h3>
+            <div style="background: white; padding: 15px; border-left: 4px solid #0070f3; color: #333; line-height: 1.6;">
+              ${message.replace(/\n/g, '<br>')}
+            </div>
+          </div>
+
+          <hr style="border: none; border-top: 1px solid #eee; margin: 30px 0;">
+          <p style="font-size: 12px; color: #666; margin: 0;">
+            Submitted at: ${new Date().toLocaleString('en-US', { 
+              timeZone: 'America/New_York',
+              dateStyle: 'full',
+              timeStyle: 'long'
+            })}
+          </p>
+        </div>
+      `
+    })
+
+    if (emailResponse.error) {
+      console.error('Resend API error:', emailResponse.error)
+      return NextResponse.json(
+        { error: 'Failed to send message. Please try again later.' },
+        { status: 500 }
+      )
+    }
 
     return NextResponse.json(
       { 

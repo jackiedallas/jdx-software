@@ -94,7 +94,7 @@ export default function MotionHeaderSection() {
                             View Our Software
                         </motion.a>
                         <motion.a
-                            href="/pulse"
+                            href="/newsletter"
                             className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-gray-700 font-medium text-sm sm:text-base rounded-lg hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -103,7 +103,7 @@ export default function MotionHeaderSection() {
                             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                             </svg>
-                            JDX Pulse Newsletter
+                            JDX Newsletter
                         </motion.a>
                     </div>
 
