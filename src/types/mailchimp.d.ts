@@ -11,7 +11,7 @@ declare module '@mailchimp/mailchimp_marketing' {
   }
 
   interface MailchimpLists {
-    addListMember(listId: string, memberData: ListMemberData): Promise<any>
+    addListMember(listId: string, memberData: ListMemberData): Promise<{ id: string; email_address: string; status: string }>
   }
 
   interface MailchimpClient {
