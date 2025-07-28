@@ -6,7 +6,7 @@ tags: ["pulse", "jdx", "software", "development", "automation", "tools", "announ
 keywords: ["JDX Software", "blog launch", "product development", "automation", "developer tools", "founder blog"]
 author:
   name: "Jackie Johnson-Dallas"
-  bio: "Founder of JDX Software, creator of Manualize - turning terminal workflows into professional documentation"
+  bio: "Founder of JDX Software, creator of Manualize - turning workflows into professional documentation"
   avatar: "/professionalheadshot.jpg"
   social:
     twitter: "@fdevdallas"

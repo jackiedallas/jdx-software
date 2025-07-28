@@ -10,7 +10,7 @@ featured_image: "/blog/sops-documentation-statistics.jpg"
 featured_image_alt: "Infographic showing SOP documentation statistics across healthcare, manufacturing, financial services, aviation, and tech industries"
 author:
   name: "Jackie Johnson-Dallas"
-  bio: "Founder of JDX Software, creator of Manualize - turning terminal workflows into professional documentation"
+  bio: "Founder of JDX Software, creator of Manualize - turning workflows into professional documentation"
   avatar: "/professionalheadshot.jpg"
   social:
     twitter: "@fdevdallas"

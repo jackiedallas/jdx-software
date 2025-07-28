@@ -1,12 +1,12 @@
 ---
-title: "From Theodore, AL to CEO: My Story"
+title: "The Mountain Taught Me"
 date: "2025-07-28"
 description: "I didn’t take the traditional path. This is the story of how a southern-raised, self-taught engineer became the founder of a modern software company—built on hustle, family, and a deep belief that tech should work for real people."
 tags: ["founder", "startup", "jdx", "black tech", "devtools", "product", "entrepreneurship", "tech for good", "software engineering"]
 keywords: ["founder story", "startup journey", "tech entrepreneurship", "black founders in tech", "self-taught developer", "cloud engineer to CEO", "bootstrap startup", "southern tech founder", "modern software company", "building in public", "software solutions company", "jdx software"]
 author:
   name: "Jackie Johnson-Dallas"
-  bio: "Founder of JDX Software, creator of Manualize - turning terminal workflows into professional documentation"
+  bio: "Founder of JDX Software, creator of Manualize - turning workflows into professional documentation"
   avatar: "/professionalheadshot.jpg"
   social:
     twitter: "@fdevdallas"
