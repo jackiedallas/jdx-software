@@ -154,37 +154,30 @@ export default function Navbar() {
                         
                         {/* Mobile Services Section */}
                         <div>
-                            <button
-                                onClick={() => setIsServicesOpen(!isServicesOpen)}
-                                className={`w-full text-left text-base font-medium transition-colors duration-200 flex items-center justify-between ${
+                            <div
+                                className={`text-base font-medium px-3 py-2 ${
                                     pathname.startsWith('/services')
-                                        ? 'text-blue-600 bg-blue-50 px-3 py-2 rounded-lg'
-                                        : 'text-gray-700 hover:text-blue-600 px-3 py-2'
+                                        ? 'text-blue-600 bg-blue-50 rounded-lg'
+                                        : 'text-gray-700'
                                 }`}
                             >
                                 Services
-                                <svg className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            
-                            {isServicesOpen && (
-                                <div className="mt-2 ml-4 space-y-2">
-                                    {servicesItems.map((item) => (
-                                        <Link
-                                            key={item.href}
-                                            href={item.href}
-                                            className={`block text-sm transition-colors duration-200 ${
-                                                pathname === item.href
-                                                    ? 'text-blue-600 bg-blue-50 px-3 py-2 rounded-lg'
-                                                    : 'text-gray-600 hover:text-blue-600 px-3 py-2'
-                                            }`}
-                                        >
-                                            {item.label}
-                                        </Link>
-                                    ))}
-                                </div>
-                            )}
+                            </div>
+                            <div className="ml-4 space-y-2">
+                                {servicesItems.map((item) => (
+                                    <Link
+                                        key={item.href}
+                                        href={item.href}
+                                        className={`block text-sm transition-colors duration-200 ${
+                                            pathname === item.href
+                                                ? 'text-blue-600 bg-blue-50 px-3 py-2 rounded-lg'
+                                                : 'text-gray-600 hover:text-blue-600 px-3 py-2'
+                                        }`}
+                                    >
+                                        {item.label}
+                                    </Link>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 )}
