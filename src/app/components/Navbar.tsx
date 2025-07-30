@@ -18,7 +18,8 @@ export default function Navbar() {
 
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
-            if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
+            // Only handle click outside for desktop (when mobile menu is closed)
+            if (!isMenuOpen && servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
                 setIsServicesOpen(false)
             }
         }
@@ -27,7 +28,7 @@ export default function Navbar() {
         return () => {
             document.removeEventListener('mousedown', handleClickOutside)
         }
-    }, [])
+    }, [isMenuOpen])
 
     const navItems = [
         { href: '/', label: 'Home' },
