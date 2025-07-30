@@ -44,7 +44,7 @@ export default function ServicesHero() {
 
                                     <div className="space-y-6">
                                         <div>
-                                            <h4 className="font-semibold text-gray-900 mb-3">What's Included:</h4>
+                                            <h4 className="font-semibold text-gray-900 mb-3">What&apos;s Included:</h4>
                                             <ul className="space-y-2 text-sm text-gray-600">
                                                 <li className="flex items-start">
                                                     <svg className="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -124,7 +124,7 @@ export default function ServicesHero() {
 
                                     <div className="space-y-6">
                                         <div>
-                                            <h4 className="font-semibold text-gray-900 mb-3">What's Included:</h4>
+                                            <h4 className="font-semibold text-gray-900 mb-3">What&apos;s Included:</h4>
                                             <ul className="space-y-2 text-sm text-gray-600">
                                                 <li className="flex items-start">
                                                     <svg className="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
