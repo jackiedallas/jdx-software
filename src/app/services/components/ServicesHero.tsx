@@ -191,7 +191,7 @@ export default function ServicesHero() {
                                                 </div>
                                                 <div className="flex justify-between items-center">
                                                     <span className="text-sm font-medium text-gray-700">Managed Plan:</span>
-                                                    <span className="text-lg font-bold text-gray-900">$2,000 + $85–$125/mo</span>
+                                                    <span className="text-lg font-bold text-gray-900">$3,000 + $85–$125/mo</span>
                                                 </div>
                                             </div>
                                             <p className="text-xs text-gray-500 mt-2">Built with Next.js + Tailwind CSS + CMS</p>
