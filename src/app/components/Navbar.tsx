@@ -1,17 +1,33 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [isServicesOpen, setIsServicesOpen] = useState(false)
+    const servicesRef = useRef<HTMLDivElement>(null)
     const pathname = usePathname()
 
     useEffect(() => {
         setIsMenuOpen(false)
+        setIsServicesOpen(false)
     }, [pathname])
+
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
+                setIsServicesOpen(false)
+            }
+        }
+
+        document.addEventListener('mousedown', handleClickOutside)
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside)
+        }
+    }, [])
 
     const navItems = [
         { href: '/', label: 'Home' },
@@ -20,6 +36,10 @@ export default function Navbar() {
         { href: '/contact', label: 'Contact' },
         { href: '/newsletter', label: 'Newsletter' },
         { href: '/blog', label: 'Blog' }
+    ]
+
+    const servicesItems = [
+        { href: '/services', label: 'Websites' }
     ]
 
     return (
@@ -59,6 +79,42 @@ export default function Navbar() {
                                 {item.label}
                             </Link>
                         ))}
+                        
+                        {/* Services Dropdown */}
+                        <div className="relative" ref={servicesRef}>
+                            <button
+                                onClick={() => setIsServicesOpen(!isServicesOpen)}
+                                className={`text-sm font-medium transition-colors duration-200 flex items-center ${
+                                    pathname.startsWith('/services')
+                                        ? 'text-blue-600 border-b-2 border-blue-600 pb-1'
+                                        : 'text-gray-700 hover:text-blue-600'
+                                }`}
+                            >
+                                Services
+                                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            
+                            {isServicesOpen && (
+                                <div className="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                                    {servicesItems.map((item) => (
+                                        <Link
+                                            key={item.href}
+                                            href={item.href}
+                                            className={`block px-4 py-3 text-sm transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg ${
+                                                pathname === item.href
+                                                    ? 'text-blue-600 bg-blue-50'
+                                                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                                            }`}
+                                            onClick={() => setIsServicesOpen(false)}
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -95,6 +151,41 @@ export default function Navbar() {
                                 {item.label}
                             </Link>
                         ))}
+                        
+                        {/* Mobile Services Section */}
+                        <div>
+                            <button
+                                onClick={() => setIsServicesOpen(!isServicesOpen)}
+                                className={`w-full text-left text-base font-medium transition-colors duration-200 flex items-center justify-between ${
+                                    pathname.startsWith('/services')
+                                        ? 'text-blue-600 bg-blue-50 px-3 py-2 rounded-lg'
+                                        : 'text-gray-700 hover:text-blue-600 px-3 py-2'
+                                }`}
+                            >
+                                Services
+                                <svg className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            
+                            {isServicesOpen && (
+                                <div className="mt-2 ml-4 space-y-2">
+                                    {servicesItems.map((item) => (
+                                        <Link
+                                            key={item.href}
+                                            href={item.href}
+                                            className={`block text-sm transition-colors duration-200 ${
+                                                pathname === item.href
+                                                    ? 'text-blue-600 bg-blue-50 px-3 py-2 rounded-lg'
+                                                    : 'text-gray-600 hover:text-blue-600 px-3 py-2'
+                                            }`}
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
                     </div>
                 )}
             </div>

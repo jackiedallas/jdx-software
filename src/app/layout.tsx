@@ -125,6 +125,7 @@ export default function RootLayout({
             `,
           }}
         />
+        <script async src="https://tally.so/widgets/embed.js"></script>
       </head>
       <body className={inter.className}>
         <Navbar />
