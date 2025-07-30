@@ -86,11 +86,6 @@ export default function SoftwareHero() {
                                             </svg>
                                             Visit Manualize
                                         </a>
-                                        <button
-                                            className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 hover:border-gray-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                                        >
-                                            Learn More
-                                        </button>
                                     </div>
                                 </div>
 
