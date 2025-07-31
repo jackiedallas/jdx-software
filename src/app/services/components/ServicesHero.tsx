@@ -18,11 +18,11 @@ export default function ServicesHero() {
                         <div className="text-center">
                             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 leading-tight">
                                 <span className="text-neutral-900 font-light">
-                                    Web Services
+                                    Website Packages for Small Businesses & Entrepreneurs
                                 </span>
                             </h1>
                             <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                                Professional websites designed for small businesses and entrepreneurs. Get online quickly with modern, mobile-friendly sites that grow with your business.
+                                Affordable website design services for small businesses and entrepreneurs—fast turnaround, mobile-ready, and built to grow with your brand.
                             </p>
                         </div>
 
