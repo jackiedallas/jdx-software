@@ -136,17 +136,10 @@ export default function AlphaWickHero() {
                                 AI-powered stock analysis mobile app for educational purposes
                             </p>
 
-                            {/* Status Badge */}
-                            <div className="flex justify-center mb-8">
-                                <span className="px-6 py-3 bg-blue-100 text-blue-800 text-lg font-semibold rounded-full animate-pulse">
-                                    Coming to App Store
-                                </span>
-                            </div>
-
                             {/* CTA Buttons */}
                             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                                 <a
-                                    href="#"
+                                    href="https://apple.co/45GVcre"
                                     className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white text-lg font-semibold rounded-lg hover:bg-blue-700 transform hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 opacity-75 cursor-not-allowed"
                                 >
                                     <svg className="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
