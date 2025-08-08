@@ -119,28 +119,28 @@ export default function AlphaWickHero() {
             <StaticBackground />
             <div className="pt-16">
                 <section
-                    className={`bg-transparent text-neutral-900 min-h-screen flex flex-col justify-start items-center text-center px-4 sm:px-6 lg:px-8 py-8 ${ibmPlexSans.className}`}
+                    className={`bg-transparent text-neutral-900 min-h-screen flex flex-col justify-start items-center text-center px-4 sm:px-6 lg:px-8 py-6 sm:py-8 ${ibmPlexSans.className}`}
                 >
-                    <div className="w-full max-w-7xl mx-auto space-y-12 sm:space-y-16 lg:space-y-20">
+                    <div className="w-full max-w-7xl mx-auto space-y-8 sm:space-y-12 md:space-y-16 lg:space-y-20">
                         {/* Header - Animated */}
                         <div className="text-center animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000" style={{
                             opacity: isVisible[0] ? 1 : 0,
                             transform: isVisible[0] ? 'translateY(0)' : 'translateY(2rem)'
                         }}>
-                            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 leading-tight">
+                            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-4 sm:mb-6 leading-tight">
                                 <span className="text-blue-600 font-light">
                                     AlphaWick
                                 </span>
                             </h1>
-                            <p className="text-xl sm:text-2xl md:text-3xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+                            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-6 sm:mb-8 px-2">
                                 AI-powered stock analysis mobile app for educational purposes
                             </p>
 
                             {/* CTA Buttons */}
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 sm:mb-12 px-4">
                                 <a
                                     href="https://apple.co/45GVcre"
-                                    className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white text-lg font-semibold rounded-lg hover:bg-blue-700 transform hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 opacity-75 cursor-not-allowed"
+                                    className="inline-flex items-center justify-center px-6 sm:px-8 py-4 bg-blue-600 text-white text-base sm:text-lg font-semibold rounded-lg hover:bg-blue-700 transform hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 min-h-[56px]"
                                 >
                                     <svg className="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
@@ -149,7 +149,7 @@ export default function AlphaWickHero() {
                                 </a>
                                 <a
                                     href="/privacy/alphawick"
-                                    className="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-300 text-gray-700 text-lg font-semibold rounded-lg hover:bg-gray-50 transform hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+                                    className="inline-flex items-center justify-center px-6 sm:px-8 py-4 border-2 border-gray-300 text-gray-700 text-base sm:text-lg font-semibold rounded-lg hover:bg-gray-50 transform hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 min-h-[56px]"
                                 >
                                     <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -165,19 +165,19 @@ export default function AlphaWickHero() {
                             transform: isVisible[1] ? 'translateY(0)' : 'translateY(2rem)'
                         }}>
                             <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-gray-200 overflow-hidden">
-                                <div className="p-8 lg:p-12">
-                                    <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-12">
+                                <div className="p-6 sm:p-8 lg:p-12">
+                                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8 sm:mb-12">
                                         Experience AlphaWick
                                     </h2>
 
                                     {/* Main Phone Display with Floating Animation */}
-                                    <div className="flex justify-center mb-12">
+                                    <div className="flex justify-center mb-8 sm:mb-12">
                                         <div className="relative">
                                             <div className="phone-container transform hover:scale-105 transition-all duration-500">
-                                                <div className="w-72 h-[600px] bg-black rounded-[3rem] p-2 shadow-2xl">
+                                                <div className="w-60 h-[500px] sm:w-72 sm:h-[600px] bg-black rounded-[3rem] p-2 shadow-2xl">
                                                     <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden relative">
                                                         {/* Phone Notch */}
-                                                        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-black rounded-b-2xl z-10"></div>
+                                                        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-5 sm:w-32 sm:h-6 bg-black rounded-b-2xl z-10"></div>
 
                                                         {/* Screenshot */}
                                                         <Image
@@ -203,13 +203,13 @@ export default function AlphaWickHero() {
                                     </div>
 
                                     {/* Screenshot Thumbnails */}
-                                    <div className="flex justify-center space-x-4 mb-8 overflow-x-auto pb-4">
+                                    <div className="flex justify-center space-x-2 sm:space-x-4 mb-6 sm:mb-8 overflow-x-auto pb-4 px-4">
                                         {screenshots.map((screenshot, index) => (
                                             <button
                                                 key={index}
                                                 onClick={() => setCurrentImageIndex(index)}
-                                                className={`flex-shrink-0 w-16 h-32 rounded-xl overflow-hidden transition-all duration-300 ${index === currentImageIndex
-                                                        ? 'ring-4 ring-blue-500 scale-110 shadow-lg'
+                                                className={`flex-shrink-0 w-12 h-24 sm:w-16 sm:h-32 rounded-xl overflow-hidden transition-all duration-300 touch-manipulation ${index === currentImageIndex
+                                                        ? 'ring-2 sm:ring-4 ring-blue-500 scale-110 shadow-lg'
                                                         : 'hover:scale-105 opacity-70 hover:opacity-100'
                                                     }`}
                                             >
@@ -224,7 +224,7 @@ export default function AlphaWickHero() {
                                         ))}
                                     </div>
 
-                                    <p className="text-center text-gray-600 text-lg font-medium">
+                                    <p className="text-center text-gray-600 text-base sm:text-lg font-medium px-4">
                                         {screenshots[currentImageIndex].alt}
                                     </p>
                                 </div>
@@ -237,12 +237,12 @@ export default function AlphaWickHero() {
                             transform: isVisible[2] ? 'translateY(0)' : 'translateY(2rem)'
                         }}>
                             <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-gray-200 overflow-hidden">
-                                <div className="p-8 lg:p-12">
-                                    <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-12">
+                                <div className="p-6 sm:p-8 lg:p-12">
+                                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8 sm:mb-12">
                                         Powerful Features for Learning
                                     </h2>
 
-                                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                                         {features.map((feature, index) => (
                                             <div
                                                 key={index}
@@ -251,13 +251,13 @@ export default function AlphaWickHero() {
                                                     animationDelay: `${index * 100}ms`
                                                 }}
                                             >
-                                                <div className={`w-20 h-20 bg-gradient-to-br ${feature.gradient} text-white rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-xl group-hover:scale-110 transition-all duration-300`}>
+                                                <div className={`w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br ${feature.gradient} text-white rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:shadow-xl group-hover:scale-110 transition-all duration-300`}>
                                                     {feature.icon}
                                                 </div>
-                                                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                                                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">
                                                     {feature.title}
                                                 </h3>
-                                                <p className="text-gray-600 leading-relaxed">
+                                                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                                                     {feature.description}
                                                 </p>
                                             </div>
@@ -268,24 +268,24 @@ export default function AlphaWickHero() {
                         </div>
 
                         {/* Educational Disclaimer with Slide-in Animation */}
-                        <div className="animate-on-scroll opacity-0 translate-x-8 transition-all duration-1000 delay-600" style={{
+                        <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 delay-600" style={{
                             opacity: isVisible[3] ? 1 : 0,
-                            transform: isVisible[3] ? 'translateX(0)' : 'translateX(2rem)'
+                            transform: isVisible[3] ? 'translateY(0)' : 'translateY(2rem)'
                         }}>
-                            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200 rounded-3xl p-8 shadow-xl">
-                                <div className="flex items-start space-x-6">
+                            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200 rounded-3xl p-6 sm:p-8 shadow-xl">
+                                <div className="flex items-start space-x-4 sm:space-x-6">
                                     <div className="flex-shrink-0">
-                                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-full flex items-center justify-center">
                                             <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                             </svg>
                                         </div>
                                     </div>
                                     <div>
-                                        <h3 className="text-2xl font-semibold text-blue-900 mb-4">
+                                        <h3 className="text-xl sm:text-2xl font-semibold text-blue-900 mb-3 sm:mb-4">
                                             Educational Purpose Only
                                         </h3>
-                                        <p className="text-blue-800 leading-relaxed text-lg">
+                                        <p className="text-blue-800 leading-relaxed text-base sm:text-lg">
                                             AlphaWick is designed exclusively for learning and educational purposes.
                                             It provides market analysis tools and educational content to help users understand
                                             technical analysis and market patterns. This app does not provide financial advice,
@@ -301,19 +301,19 @@ export default function AlphaWickHero() {
                             opacity: isVisible[4] ? 1 : 0,
                             transform: isVisible[4] ? 'scale(1)' : 'scale(0.95)'
                         }}>
-                            <div className="text-center pb-16">
-                                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                                    Coming Soon to the App Store
+                            <div className="text-center pb-12 sm:pb-16">
+                                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
+                                    Available on the App Store
                                 </h2>
-                                <p className="text-gray-600 text-xl max-w-3xl mx-auto mb-12 leading-relaxed">
-                                    AlphaWick is currently in development and will be available on the iOS App Store soon.
-                                    Stay tuned for updates on the launch date and early access opportunities.
+                                <p className="text-gray-600 text-lg sm:text-xl max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed px-4">
+                                    AlphaWick is now available for download on the iOS App Store.
+                                    Start learning technical analysis and market fundamentals today.
                                 </p>
 
-                                <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4">
                                     <a
                                         href="/newsletter"
-                                        className="inline-flex items-center justify-center px-10 py-5 bg-gradient-to-r from-blue-500 via-sky-400 to-emerald-500 text-white text-xl font-semibold rounded-xl hover:from-blue-600 hover:via-sky-500 hover:to-emerald-600 transform hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 shadow-xl"
+                                        className="inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-blue-500 via-sky-400 to-emerald-500 text-white text-lg sm:text-xl font-semibold rounded-xl hover:from-blue-600 hover:via-sky-500 hover:to-emerald-600 transform hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 shadow-xl min-h-[56px]"
                                     >
                                         <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-5 5v-5zM4 17h5v5l-5-5zM3 4h18v12H3z" />

@@ -74,6 +74,7 @@ export default function Navbar() {
                             width={40}
                             height={40}
                             className="h-20 w-20 sm:h-40 sm:w-40"
+                            priority
                         />
                     </Link>
 
