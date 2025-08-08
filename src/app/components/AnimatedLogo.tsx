@@ -110,21 +110,21 @@ export default function AnimatedLogo({ className }: { className?: string }) {
                     <motion.polygon 
                         className="st5" 
                         points="279.31 212.32 253.11 176.68 279.31 176.68 293.08 195.43 331.72 248.06 306.08 248.06 292.67 231.11 281.3 248.06 254.25 248.06 279.31 212.32"
-                        initial={{ pathLength: 0, strokeDasharray: "1000" }}
-                        animate={{ pathLength: 1, strokeDasharray: "0" }}
+                        initial={{ pathLength: 0 }}
+                        animate={{ pathLength: 1 }}
                         transition={{ duration: 0.3, delay: 3.1 }}
                         style={{ 
-                            filter: 'drop-shadow(0 0 4px #009fff)',
+                            filter: 'drop-shadow(0 0 4px #009fff)'
                         }}
                     />
                     <motion.path 
                         className="st4" 
                         d="M321.41,197.41c4.46-6.91,8.93-13.83,13.39-20.74h-26.77c-4.37,6.91-8.75,13.83-13.12,20.74h26.51-.01Z"
-                        initial={{ pathLength: 0, strokeDasharray: "1000" }}
-                        animate={{ pathLength: 1, strokeDasharray: "0" }}
+                        initial={{ pathLength: 0 }}
+                        animate={{ pathLength: 1 }}
                         transition={{ duration: 0.3, delay: 3.3 }}
                         style={{ 
-                            filter: 'drop-shadow(0 0 4px #00ecff)',
+                            filter: 'drop-shadow(0 0 4px #00ecff)'
                         }}
                     />
                 </motion.g>
