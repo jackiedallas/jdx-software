@@ -168,13 +168,13 @@ export default function SoftwareHero() {
 
                                     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                                         <a
-                                            href="#"
-                                            className="inline-flex items-center justify-center px-4 sm:px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transform hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 opacity-75 cursor-not-allowed text-sm sm:text-base"
+                                            href="/software/alphawick"
+                                            className="inline-flex items-center justify-center px-4 sm:px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transform hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 text-sm sm:text-base"
                                         >
-                                            <svg className="w-4 h-4 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                                            <svg className="w-4 h-4 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                                             </svg>
-                                            <span className="truncate">Coming to App Store</span>
+                                            <span className="truncate">Learn More</span>
                                         </a>
                                         <a
                                             href="/privacy/alphawick"
@@ -188,16 +188,12 @@ export default function SoftwareHero() {
                                     </div>
                                 </div>
 
-                                {/* AlphaWick App Screenshot */}
+                                {/* AlphaWick App Icon/Graphic */}
                                 <div className="flex items-center justify-center order-1 lg:order-2">
-                                    <div className="w-full max-w-xs sm:max-w-sm">
-                                        <Image 
-                                            src="/LightHomeNew.png"
-                                            alt="AlphaWick App Screenshot" 
-                                            width={300}
-                                            height={600}
-                                            className="w-full h-auto rounded-2xl shadow-2xl border border-gray-200 mx-auto"
-                                        />
+                                    <div className="w-48 h-48 bg-gradient-to-br from-blue-500 via-blue-600 to-indigo-700 rounded-3xl shadow-2xl flex items-center justify-center">
+                                        <svg className="w-24 h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                        </svg>
                                     </div>
                                 </div>
                             </div>

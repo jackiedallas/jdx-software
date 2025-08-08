@@ -8,19 +8,27 @@ import Image from 'next/image'
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isServicesOpen, setIsServicesOpen] = useState(false)
+    const [isSoftwareOpen, setIsSoftwareOpen] = useState(false)
     const servicesRef = useRef<HTMLDivElement>(null)
+    const softwareRef = useRef<HTMLDivElement>(null)
     const pathname = usePathname()
 
     useEffect(() => {
         setIsMenuOpen(false)
         setIsServicesOpen(false)
+        setIsSoftwareOpen(false)
     }, [pathname])
 
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
             // Only handle click outside for desktop (when mobile menu is closed)
-            if (!isMenuOpen && servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
-                setIsServicesOpen(false)
+            if (!isMenuOpen) {
+                if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
+                    setIsServicesOpen(false)
+                }
+                if (softwareRef.current && !softwareRef.current.contains(event.target as Node)) {
+                    setIsSoftwareOpen(false)
+                }
             }
         }
 
@@ -32,7 +40,6 @@ export default function Navbar() {
 
     const navItems = [
         { href: '/', label: 'Home' },
-        { href: '/software', label: 'Software' },
         { href: '/about', label: 'About' },
         { href: '/contact', label: 'Contact' },
         { href: '/newsletter', label: 'Newsletter' },
@@ -41,6 +48,11 @@ export default function Navbar() {
 
     const servicesItems = [
         { href: '/services', label: 'Websites' }
+    ]
+
+    const softwareItems = [
+        { href: '/software', label: 'Overview' },
+        { href: '/software/alphawick', label: 'AlphaWick' }
     ]
 
     return (
@@ -80,6 +92,42 @@ export default function Navbar() {
                                 {item.label}
                             </Link>
                         ))}
+                        
+                        {/* Software Dropdown */}
+                        <div className="relative" ref={softwareRef}>
+                            <button
+                                onClick={() => setIsSoftwareOpen(!isSoftwareOpen)}
+                                className={`text-sm font-medium transition-colors duration-200 flex items-center ${
+                                    pathname.startsWith('/software')
+                                        ? 'text-blue-600 border-b-2 border-blue-600 pb-1'
+                                        : 'text-gray-700 hover:text-blue-600'
+                                }`}
+                            >
+                                Software
+                                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            
+                            {isSoftwareOpen && (
+                                <div className="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                                    {softwareItems.map((item) => (
+                                        <Link
+                                            key={item.href}
+                                            href={item.href}
+                                            className={`block px-4 py-3 text-sm transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg ${
+                                                pathname === item.href
+                                                    ? 'text-blue-600 bg-blue-50'
+                                                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                                            }`}
+                                            onClick={() => setIsSoftwareOpen(false)}
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
                         
                         {/* Services Dropdown */}
                         <div className="relative" ref={servicesRef}>
@@ -152,6 +200,47 @@ export default function Navbar() {
                                 {item.label}
                             </Link>
                         ))}
+                        
+                        {/* Mobile Software Section */}
+                        <div>
+                            <button
+                                type="button"
+                                onClick={() => setIsSoftwareOpen(!isSoftwareOpen)}
+                                className={`w-full text-left text-base font-medium transition-colors duration-200 flex items-center justify-between px-3 py-2 ${
+                                    pathname.startsWith('/software')
+                                        ? 'text-blue-600 bg-blue-50 rounded-lg'
+                                        : 'text-gray-700 hover:text-blue-600'
+                                }`}
+                            >
+                                Software
+                                <svg 
+                                    className={`w-4 h-4 transition-transform duration-200 ${isSoftwareOpen ? 'rotate-180' : ''}`} 
+                                    fill="none" 
+                                    stroke="currentColor" 
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            
+                            <div className={`overflow-hidden transition-all duration-300 ${isSoftwareOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}>
+                                <div className="mt-2 ml-4 space-y-2">
+                                    {softwareItems.map((item) => (
+                                        <a
+                                            key={item.href}
+                                            href={item.href}
+                                            className={`block text-sm transition-colors duration-200 px-3 py-2 rounded-lg ${
+                                                pathname === item.href
+                                                    ? 'text-blue-600 bg-blue-50'
+                                                    : 'text-gray-600 hover:text-blue-600 hover:bg-gray-50'
+                                            }`}
+                                        >
+                                            {item.label}
+                                        </a>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
                         
                         {/* Mobile Services Section */}
                         <div>
