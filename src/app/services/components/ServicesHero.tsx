@@ -39,7 +39,7 @@ export default function ServicesHero() {
                                         </div>
                                         <h3 className="text-2xl font-bold text-gray-900 mb-2">LaunchPad Site</h3>
                                         <p className="text-gray-600 mb-4">For local businesses, solopreneurs, side hustlers</p>
-                                        <div className="text-lg font-semibold text-blue-600">3–5 business days</div>
+                                        <div className="text-lg font-semibold text-blue-600">2–4 weeks</div>
                                     </div>
 
                                     <div className="space-y-6">
@@ -95,14 +95,14 @@ export default function ServicesHero() {
                                             <div className="space-y-3">
                                                 <div className="flex justify-between items-center">
                                                     <span className="text-sm font-medium text-gray-700">Build-Only:</span>
-                                                    <span className="text-lg font-bold text-gray-900">$500 – $1,500</span>
+                                                    <span className="text-lg font-bold text-gray-900">$1,500 – $2,000</span>
                                                 </div>
                                                 <div className="flex justify-between items-center">
                                                     <span className="text-sm font-medium text-gray-700">Managed Plan:</span>
-                                                    <span className="text-lg font-bold text-gray-900">$1,000 + $45–$65/mo</span>
+                                                    <span className="text-lg font-bold text-gray-900">$1,500 + $50/mo</span>
                                                 </div>
                                             </div>
-                                            <p className="text-xs text-gray-500 mt-2">Built with Wix or Framer</p>
+                                            <p className="text-xs text-gray-500 mt-2">Built with Wix or Next.js/Vercel</p>
                                         </div>
                                     </div>
                                 </div>
@@ -119,7 +119,7 @@ export default function ServicesHero() {
                                         </div>
                                         <h3 className="text-2xl font-bold text-gray-900 mb-2">Growth Site</h3>
                                         <p className="text-gray-600 mb-4">For creators, small business owners, coaches, consultants</p>
-                                        <div className="text-lg font-semibold text-green-600">1–2 weeks</div>
+                                        <div className="text-lg font-semibold text-green-600">5–7 weeks</div>
                                     </div>
 
                                     <div className="space-y-6">
@@ -187,11 +187,11 @@ export default function ServicesHero() {
                                             <div className="space-y-3">
                                                 <div className="flex justify-between items-center">
                                                     <span className="text-sm font-medium text-gray-700">Build-Only:</span>
-                                                    <span className="text-lg font-bold text-gray-900">$2,000 – $4,000</span>
+                                                    <span className="text-lg font-bold text-gray-900">$3,000 – $4,000</span>
                                                 </div>
                                                 <div className="flex justify-between items-center">
                                                     <span className="text-sm font-medium text-gray-700">Managed Plan:</span>
-                                                    <span className="text-lg font-bold text-gray-900">$3,000 + $85–$125/mo</span>
+                                                    <span className="text-lg font-bold text-gray-900">$3,000 + $100/mo</span>
                                                 </div>
                                             </div>
                                             <p className="text-xs text-gray-500 mt-2">Built with Next.js + Tailwind CSS + CMS</p>
